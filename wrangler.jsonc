@@ -1,8 +1,31 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "ariselux-backend",
+  "main": "src/worker.js",
   "compatibility_date": "2026-10-09",
-  "assets": {
-    "directory": "./dist"
+  "containers": [
+    {
+      "class_name": "AriseluxBackendContainer",
+      "image": "./Dockerfile",
+      "max_instances": 3,
+      "instance_type": "lite"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "ARISELUX_BACKEND",
+        "class_name": "AriseluxBackendContainer"
+      }
+    ]
+  },
+  "exports": {
+    "AriseluxBackendContainer": {
+      "type": "durable-object",
+      "storage": "sqlite"
+    }
+  },
+  "observability": {
+    "enabled": true
   }
 }

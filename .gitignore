@@ -1,0 +1,19 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and runtime output
+node_modules/
+*.log
+ariselux.log.1
+
+# Lead data is local deployment state and may contain personal information
+data/*.json
+!data/.gitkeep
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

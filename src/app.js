@@ -53,6 +53,9 @@ app.use('/api/rfq', quotationRoutes); // friendly alias for RFQ
 app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/inquiries', inquiryRoutes); // smart unified router
 app.use('/api/contact', inquiryRoutes); // friendly alias for contact form
+// Backward-compatible alias for older frontend builds that used the health
+// endpoint as their API base URL.
+app.use('/api/health/enquiries', enquiryRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/newsletter', newsletterRoutes);
 

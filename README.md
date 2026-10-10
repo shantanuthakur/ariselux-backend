@@ -86,6 +86,22 @@ npm run dev
 npm start
 ```
 
+### Cloudflare Containers deployment
+
+The local `.env` file is not included in the Docker image. Before deploying, set
+the SMTP credentials as Worker secrets (use a Gmail App Password, not the
+normal Gmail password), then deploy:
+
+```bash
+npx wrangler secret put SMTP_USER
+npx wrangler secret put SMTP_PASS
+npx wrangler deploy
+```
+
+The container receives these secrets at startup through `src/worker.js`. After
+changing a secret, redeploy or restart the container so it picks up the new
+value.
+
 ---
 
 ## 📡 API Endpoints Reference

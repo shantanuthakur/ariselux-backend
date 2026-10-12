@@ -805,3 +805,214 @@ export async function sendCustomerAcknowledgment(item) {
   }
   return sendCustomerEnquiryAcknowledgment(item);
 }
+
+/* ==========================================================
+   6. CAREER APPLICATION SALES/HR NOTIFICATION (with Resume)
+   ========================================================== */
+export async function sendCareerApplicationNotification(application, file) {
+  const currentConfig = getConfig();
+  const { smtp, company } = currentConfig;
+  const mailer = createTransporter(currentConfig);
+
+  const cleanPhone = (application.phone || '').replace(/[^0-9]/g, '');
+  const waCandidateText = encodeURIComponent(
+    `Hello ${application.fullName}, regarding your application for ${application.role} at Ariselux Equipments (Ref #${application.id}):\nOur team is reviewing your profile...`
+  );
+
+  const fileSizeMb = file ? (file.size / (1024 * 1024)).toFixed(2) : '0';
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#0f172a;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0f172a;padding:35px 0;">
+    <tr><td align="center">
+      <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.3);">
+        <!-- HEADER -->
+        <tr>
+          <td style="background:linear-gradient(135deg, #0b1e36 0%, #13325c 100%);padding:26px 32px;border-bottom:4px solid #f47920;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td>
+                  <span style="display:inline-block;background:#f47920;color:#ffffff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:4px 10px;border-radius:4px;text-transform:uppercase;margin-bottom:8px;">
+                    CAREER APPLICATION &bull; RESUME ATTACHED
+                  </span>
+                  <h1 style="margin:0;font-size:22px;color:#ffffff;font-weight:800;letter-spacing:-0.5px;">New Job Application Received 📄</h1>
+                  <p style="margin:6px 0 0;font-size:13px;color:#e0f2fe;">Ariselux Equipments &bull; Roorkee Works Talent Acquisition</p>
+                </td>
+                <td align="right" style="vertical-align:top;">
+                  <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:8px 16px;text-align:center;">
+                    <div style="font-size:10px;color:#e0f2fe;font-weight:700;letter-spacing:1px;text-transform:uppercase;">APPLICATION ID</div>
+                    <div style="font-size:15px;font-weight:800;color:#ffffff;font-family:monospace;margin-top:2px;">#${application.id}</div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- ROLE BANNER -->
+        <tr>
+          <td style="background:#f0f9ff;padding:18px 32px;border-bottom:1px solid #bae6fd;">
+            <table width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="width:65%;">
+                  <span style="font-size:11px;font-weight:700;color:#0369a1;text-transform:uppercase;letter-spacing:1px;">Target Position / Role</span>
+                  <h2 style="margin:4px 0 0;font-size:20px;font-weight:800;color:#0c4a6e;">${application.role}</h2>
+                </td>
+                <td style="width:35%;text-align:right;">
+                  <span style="font-size:11px;font-weight:700;color:#0369a1;text-transform:uppercase;letter-spacing:1px;">Experience</span>
+                  <div style="margin-top:4px;font-size:15px;font-weight:800;color:#0369a1;background:#ffffff;padding:4px 12px;border-radius:6px;display:inline-block;border:1px solid #7dd3fc;">
+                    ${application.experience || 'Not specified'}
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- CANDIDATE DETAILS -->
+        <tr>
+          <td style="padding:26px 32px;">
+            <div style="font-size:12px;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;">Candidate Profile</div>
+            <table width="100%" cellpadding="10" cellspacing="0" style="border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;font-size:14px;">
+              <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;">
+                <td style="width:32%;font-weight:700;color:#475569;">Full Name:</td>
+                <td style="font-weight:800;color:#0f172a;">${application.fullName}</td>
+              </tr>
+              <tr style="border-bottom:1px solid #e2e8f0;">
+                <td style="font-weight:700;color:#475569;">Email Address:</td>
+                <td><a href="mailto:${application.email}" style="color:#1b5faa;font-weight:600;text-decoration:none;">${application.email}</a></td>
+              </tr>
+              <tr style="background:#f8fafc;border-bottom:1px solid #e2e8f0;">
+                <td style="font-weight:700;color:#475569;">Phone Number:</td>
+                <td>
+                  <a href="tel:${application.phone}" style="color:#1b5faa;font-weight:700;text-decoration:none;">${application.phone}</a>
+                  ${cleanPhone ? `&nbsp;&bull;&nbsp;<a href="https://wa.me/${cleanPhone}?text=${waCandidateText}" target="_blank" style="color:#25D366;font-weight:700;text-decoration:none;">Chat on WhatsApp &rarr;</a>` : ''}
+                </td>
+              </tr>
+              <tr style="border-bottom:1px solid #e2e8f0;">
+                <td style="font-weight:700;color:#475569;">Resume File:</td>
+                <td style="color:#0f172a;">
+                  <strong>${file ? file.originalname : 'No file attached'}</strong>
+                  ${file ? `<span style="color:#64748b;font-size:12px;"> (${fileSizeMb} MB) &bull; Attached below</span>` : ''}
+                </td>
+              </tr>
+              ${application.summary ? `
+              <tr style="background:#f8fafc;">
+                <td style="font-weight:700;color:#475569;vertical-align:top;">Profile Summary / Notes:</td>
+                <td style="color:#334155;line-height:1.6;white-space:pre-wrap;">${application.summary}</td>
+              </tr>` : ''}
+            </table>
+
+            <div style="margin-top:24px;padding:16px;background:#fef3c7;border:1px solid #fde68a;border-radius:8px;font-size:13px;color:#92400e;">
+              <strong>📎 Resume Attachment:</strong> The candidate's resume has been attached to this email. You can directly preview or download the file from your mail client.
+            </div>
+          </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+          <td style="background:#f8fafc;padding:18px 32px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;text-align:center;">
+            Ariselux Equipments Private Limited &bull; LATIFPUR, Bhagwanpur - Roorkee, Uttarakhand &bull; Tel: +91-8126732502
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>
+  `;
+
+  if (!mailer) {
+    console.log(`[SMTP SIMULATED] Career Application #${application.id} from ${application.fullName} (${application.role})`);
+    return { sent: false, simulated: true };
+  }
+
+  const attachments = [];
+  if (file && file.buffer) {
+    attachments.push({
+      filename: file.originalname || 'Resume.pdf',
+      content: file.buffer,
+      contentType: file.mimetype || 'application/pdf'
+    });
+  }
+
+  try {
+    const info = await mailer.sendMail({
+      from: `"${currentConfig.company.name}" <${smtp.fromEmail}>`,
+      to: company.email,
+      replyTo: application.email,
+      subject: `New Job Application: ${application.role} - ${application.fullName} [Ref #${application.id}] 📄`,
+      html: html,
+      attachments: attachments
+    });
+    console.log(`[CAREER APPLICATION EMAIL SENT]: Delivered to ${company.email} (ID: ${info.messageId})`);
+    return { sent: true, messageId: info.messageId };
+  } catch (err) {
+    console.error(`[CAREER EMAIL ERROR] Failed to send to ${company.email}:`, err.message);
+    return { sent: false, error: err.message };
+  }
+}
+
+export async function sendApplicantAcknowledgment(application) {
+  const currentConfig = getConfig();
+  const { smtp, company } = currentConfig;
+  const mailer = createTransporter(currentConfig);
+
+  const html = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#f8fafc;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;padding:35px 0;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 15px rgba(0,0,0,0.06);">
+        <tr>
+          <td style="background:#0b1e36;padding:26px 32px;border-bottom:3px solid #1b5faa;">
+            <h1 style="margin:0;font-size:22px;color:#ffffff;font-weight:800;">Application Received &bull; Ariselux Equipments</h1>
+            <p style="margin:6px 0 0;font-size:13px;color:#94a3b8;">Ref #${application.id}</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:28px 32px;font-size:14.5px;line-height:1.7;color:#334155;">
+            <p>Dear <strong>${application.fullName}</strong>,</p>
+            <p>Thank you for applying for the position of <strong>${application.role}</strong> at <strong>Ariselux Equipments Private Limited</strong>.</p>
+            <p>We have successfully received your application and resume. Our engineering and talent acquisition team will carefully review your qualifications and relevant experience. If your profile matches our requirements, we will reach out to schedule an interview.</p>
+            <div style="background:#f1f5f9;padding:16px 20px;border-radius:8px;margin:20px 0;font-size:13.5px;">
+              <strong>Application Summary:</strong><br>
+              &bull; Role Applied: <strong>${application.role}</strong><br>
+              &bull; Application ID: <strong>#${application.id}</strong><br>
+              &bull; Date Submitted: <strong>${new Date().toLocaleDateString('en-IN', { dateStyle: 'long' })}</strong>
+            </div>
+            <p>If you have any questions or additional documents to share, feel free to reply to this email or reach us at <a href="mailto:sales@ariselux.com" style="color:#1b5faa;font-weight:600;">sales@ariselux.com</a>.</p>
+            <p style="margin-top:25px;">Best regards,<br><strong>Talent Acquisition Team</strong><br>Ariselux Equipments Private Limited<br>Bhagwanpur - Roorkee, Uttarakhand, India</p>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>
+  `;
+
+  if (!mailer || !application.email) {
+    return { sent: false, simulated: true };
+  }
+
+  try {
+    const info = await mailer.sendMail({
+      from: `"${currentConfig.company.name}" <${smtp.fromEmail}>`,
+      to: application.email,
+      replyTo: company.email,
+      subject: `Application Received: ${application.role} [Ref #${application.id}] — Ariselux Equipments`,
+      html: html
+    });
+    return { sent: true, messageId: info.messageId };
+  } catch (err) {
+    console.error(`[APPLICANT ACK ERROR] Failed to send to ${application.email}:`, err.message);
+    return { sent: false, error: err.message };
+  }
+}
+

@@ -10,6 +10,7 @@ const INQUIRIES_FILE = path.join(DATA_DIR, 'inquiries.json');
 const QUOTATIONS_FILE = path.join(DATA_DIR, 'quotations.json');
 const ENQUIRIES_FILE = path.join(DATA_DIR, 'enquiries.json');
 const SUBSCRIBERS_FILE = path.join(DATA_DIR, 'subscribers.json');
+const APPLICATIONS_FILE = path.join(DATA_DIR, 'applications.json');
 
 // Ensure data folder and files exist
 async function ensureFiles() {
@@ -19,7 +20,8 @@ async function ensureFiles() {
       { path: INQUIRIES_FILE, default: '[]' },
       { path: QUOTATIONS_FILE, default: '[]' },
       { path: ENQUIRIES_FILE, default: '[]' },
-      { path: SUBSCRIBERS_FILE, default: '[]' }
+      { path: SUBSCRIBERS_FILE, default: '[]' },
+      { path: APPLICATIONS_FILE, default: '[]' }
     ];
     for (const f of files) {
       try {
@@ -256,4 +258,45 @@ export async function saveSubscriber(email) {
   subscribers.push(newSubscriber);
   await fs.writeFile(SUBSCRIBERS_FILE, JSON.stringify(subscribers, null, 2), 'utf-8');
   return { subscriber: newSubscriber, alreadySubscribed: false };
+}
+
+// ── CAREER APPLICATIONS STORAGE ──────────────────────────────
+export async function getApplications() {
+  await ensureFiles();
+  try {
+    const data = await fs.readFile(APPLICATIONS_FILE, 'utf-8');
+    const list = JSON.parse(data || '[]');
+    return list.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+  } catch (err) {
+    console.error('Error reading applications:', err);
+    return [];
+  }
+}
+
+export async function getApplicationById(id) {
+  const applications = await getApplications();
+  return applications.find(a => a.id === id) || null;
+}
+
+export async function saveApplication(appData) {
+  await ensureFiles();
+  const applications = await getApplications();
+
+  const idSuffix = crypto.randomBytes(3).toString('hex').toUpperCase();
+  const newApp = {
+    id: `APP-${Date.now().toString(36).toUpperCase()}-${idSuffix}`,
+    fullName: appData.fullName || appData.name || '',
+    email: appData.email || '',
+    phone: appData.phone || '',
+    role: appData.role || '',
+    experience: appData.experience || '',
+    summary: appData.summary || '',
+    resume: appData.resume || null, // { originalName, size, mimeType }
+    status: 'new',
+    createdAt: new Date().toISOString()
+  };
+
+  applications.push(newApp);
+  await fs.writeFile(APPLICATIONS_FILE, JSON.stringify(applications, null, 2), 'utf-8');
+  return newApp;
 }

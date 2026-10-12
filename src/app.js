@@ -7,6 +7,7 @@ import quotationRoutes from './routes/quotationRoutes.js';
 import enquiryRoutes from './routes/enquiryRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import newsletterRoutes from './routes/newsletterRoutes.js';
+import careerRoutes from './routes/careerRoutes.js';
 
 const app = express();
 
@@ -46,13 +47,14 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-
 // API Routes (Dedicated + Legacy Aliases)
 app.use('/api/quotations', quotationRoutes);
 app.use('/api/rfq', quotationRoutes); // friendly alias for RFQ
 app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/inquiries', inquiryRoutes); // smart unified router
 app.use('/api/contact', inquiryRoutes); // friendly alias for contact form
+app.use('/api/careers', careerRoutes); // career applications with resume upload
+app.use('/api/applications', careerRoutes); // alias for career applications
 // Backward-compatible alias for older frontend builds that used the health
 // endpoint as their API base URL.
 app.use('/api/health/enquiries', enquiryRoutes);

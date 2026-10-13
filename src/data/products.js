@@ -9,7 +9,7 @@ export const productsData = {
     category: 'diesel',
     categoryName: 'Diesel Powered',
     tagline: 'High-Voltage 240,000 Lumens Heavy Diesel Mobile Lighting Tower',
-    description: 'Ariselux Equipment Company proudly presents its advanced LED Flood Light solution - engineered for maximum brightness, energy efficiency, and durability. Powered by a genuine Japanese Escort Kubota 14.5 HP water-cooled diesel engine operating at 1500 RPM and an automated 12.0-meter telescopic mast, delivering 240,000 lumens across 8,000 square meters.',
+    description: 'Ariselux Equipment Company proudly presents its advanced LED Flood Light solution - engineered for maximum brightness, energy efficiency, and durability. Powered by a genuine Japanese Escorts Kubota 14.5 HP water-cooled diesel engine operating at 1500 RPM and an automated 12.0-meter telescopic mast, delivering 240,000 lumens across 8,000 square meters.',
     image: '/images/products/Diesel oprated/ACE LT 12000 -1.png',
     gallery: [
       '/images/products/Diesel oprated/ACE LT 12000 -1.png',
@@ -42,16 +42,16 @@ export const productsData = {
     quickSpecs: {
       mastHeight: { title: 'Mast height', value: '39 ft (12.0 MTR)', icon: '/images/icons/mast-height.svg' },
       light: { title: 'Light', value: '4 x 300W-500W LED (2,40,000 Lumens)', icon: '/images/icons/led-light.svg' },
-      runtime: { title: 'Runtime', value: '80+ Hours (100L Kubota Diesel)', icon: '/images/icons/runtime-in-hours.svg' },
+      runtime: { title: 'Runtime', value: '80+ Hours (100L Escorts Kubota Diesel)', icon: '/images/icons/runtime-in-hours.svg' },
       coverage: { title: 'Light coverage', value: '8000 sq. m', icon: '/images/icons/light-coverage.svg' }
     },
     tableSpecs: [
       {
-        engine: 'Escort Kubota 14.5 HP (1500 R.P.M) Water-Cooled Diesel',
+        engine: 'Escorts Kubota 14.5 HP (1500 R.P.M) Water-Cooled Diesel',
         generator: '220 Volts Connection Board Output Board',
         tankSize: '100 Liters (Diesel Tank Capacity)',
         sockets: 'Industrial Weatherproof Sockets with MCB Protection',
-        weight: '600 - 700 KG',
+        weight: '700 KG',
         dimensions: 'Travel: 2.3 x 1.4 x 2.4 m\nOperation: 2.6 x 2.4 x 12.0 m'
       }
     ],
@@ -59,7 +59,7 @@ export const productsData = {
       'Combined luminous output of 240,000 lumens (40,000 - 60,000 lumens per light)',
       'High-voltage LED flood lights with power range 300W to 500W',
       'Illumination coverage up to 8,000 square meters',
-      'Japanese Escort Kubota 14.5 H.P 1500 R.P.M water-cooled diesel engine',
+      'Japanese Escorts Kubota 14.5 H.P 1500 R.P.M water-cooled diesel engine',
       '12.0-meter heavy-duty vertical telescopic mast (ground level to lights)',
       'Single-axle trailer chassis with 4 heavy-duty outrigger leveling jacks'
     ],
@@ -116,7 +116,7 @@ export const productsData = {
         {
           category: 'Power & Engine System',
           items: [
-            { name: 'Engine Make & Model', value: 'Escort Kubota 14.5 HP Water-Cooled Diesel' },
+            { name: 'Engine Make & Model', value: 'Escorts Kubota 14.5 HP Water-Cooled Diesel' },
             { name: 'Rated Speed', value: '1500 RPM' },
             { name: 'Alternator / Output', value: '220V Connection Board Output with Auxiliary Power Sockets' },
             { name: 'Fuel Tank Capacity', value: '100 Liters (Diesel)' },
@@ -151,7 +151,7 @@ export const productsData = {
             { name: 'Tyres', value: '14" All-Terrain Pneumatic Wheels (Highway Towable up to 80 km/h)' },
             { name: 'Stabilizers', value: '4 Independent Wind-Down Outrigger Jacks with Footpads' },
             { name: 'Lifting Points', value: 'Integrated Central Crane Lifting Eye & Forklift Pockets' },
-            { name: 'Gross Weight', value: '600 - 700 kg' },
+            { name: 'Gross Weight', value: '700 kg' },
             { name: 'Dimensions', value: 'Travel: 2.3 x 1.4 x 2.4 m | Operation: 2.6 x 2.4 x 12.0 m' }
           ]
         },
@@ -212,7 +212,7 @@ export const productsData = {
     },
     tableSpecs: [
       {
-        engine: 'Rehlko (KOHLER) KD15-441 Air Cooled (8.1 BHP @ 3000 RPM)',
+        engine: 'Kohler KD15-441 Air Cooled (8.1 BHP @ 3000 RPM)',
         generator: 'Maccalte / NSM 5 kVA Max, 240V, 50Hz, Singlephase, 17A Max Brushless',
         tankSize: '40 L Canopy-Integrated Diesel (Lube Oil: 1.5 L | Battery: 12V 35Ah)',
         sockets: 'Digital Hour Meter, Voltmeter & Amp. Meter, MCB per Light',
@@ -223,7 +223,7 @@ export const productsData = {
     features: [
       '4 x 400W LED Flood Lights delivering 2,32,000 lumens total brightness',
       'Illumination area coverage up to 7,000 square meters',
-      'Rehlko (KOHLER) KD15-441 Air Cooled 8.1 BHP diesel engine running at 3000 RPM',
+      'Kohler KD15-441 Air Cooled 8.1 BHP diesel engine running at 3000 RPM',
       'Maccalte/NSM 5 kVA brushless alternator (240V, 50Hz, 17A max single phase)',
       '40-liter diesel tank capacity delivering over 44 continuous operating hours (approx 900 ml/hr)',
       '9.0-meter vertical telescopic mast with 359° manual rotation and 6mm stainless steel wire rope',
@@ -233,7 +233,7 @@ export const productsData = {
       {
         title: 'Power & Engine',
         items: [
-          'Engine: KD15-441, Air Cooled Make– Rehlko (KOHLER), 8.1 BHP, RPM-3000',
+          'Engine: KD15-441, Air Cooled Make– Kohler, 8.1 BHP, RPM-3000',
           'Alternator: Maccalte/NSM, 5 kVA Max, 240V, 50Hz, Singlephase, 17A Max, Brushless',
           'Fuel Tank Capacity: 40 L (Diesel), canopy-integrated, Lube Oil: 1.5 L',
           'Battery: 12V 35Ah, Silencer integrated into canopy'
@@ -278,7 +278,7 @@ export const productsData = {
           category: 'Power & Engine System',
           items: [
             { name: 'Engine Model', value: 'KD15-441, Air Cooled' },
-            { name: 'Engine Make', value: 'Rehlko (KOHLER)' },
+            { name: 'Engine Make', value: 'Kohler' },
             { name: 'Rated Power & Speed', value: '8.1 BHP, RPM-3000' },
             { name: 'Alternator', value: 'Maccalte / NSM, 5 kVA Max, 240V, 50Hz, Singlephase, 17A Max, Brushless' },
             { name: 'Fuel Tank Capacity', value: '40 L (Diesel), Canopy-Integrated' },
@@ -386,18 +386,18 @@ export const productsData = {
     },
     tableSpecs: [
       {
-        engine: 'Rehlko (KOHLER) KD15-441 Air Cooled (8.1 BHP @ 3000 RPM)',
+        engine: 'Kohler KD15-441 Air Cooled (8.1 BHP @ 3000 RPM)',
         generator: 'Maccalte / NSM 5 kVA Max, 240V, 50Hz, Singlephase, 17A Max Brushless',
         tankSize: '40 L Canopy-Integrated Diesel (Lube Oil: 1.5 L | Battery: 12V 35Ah)',
         sockets: 'Digital Hour Meter, Voltmeter & Amp. Meter, MCB per Light',
-        weight: 'Approx. 700 KG',
+        weight: '600 KG',
         dimensions: 'Travel: 1.4-1.5 x 1.1-1.2 x 2.4-2.5 m | Mast: 7.0 m (GL to Light)'
       }
     ],
     features: [
       '4 x 400W LED Flood Lights delivering 2,32,000 lumens total brightness',
       'Illumination area coverage up to 5,000 square meters',
-      'Rehlko (KOHLER) KD15-441 Air Cooled 8.1 BHP diesel engine running at 3000 RPM',
+      'Kohler KD15-441 Air Cooled 8.1 BHP diesel engine running at 3000 RPM',
       'Maccalte/NSM 5 kVA brushless alternator (240V, 50Hz, 17A max single phase)',
       '40-liter diesel tank capacity delivering over 44 continuous operating hours (approx 900 ml/hr)',
       '7.0-meter vertical telescopic mast with 359° manual rotation and 6mm stainless steel wire rope',
@@ -407,7 +407,7 @@ export const productsData = {
       {
         title: 'Power & Engine',
         items: [
-          'Engine: KD15-441, Air Cooled Make– Rehlko (KOHLER), 8.1 BHP, RPM-3000',
+          'Engine: KD15-441, Air Cooled Make– Kohler, 8.1 BHP, RPM-3000',
           'Alternator: Maccalte/NSM, 5 kVA Max, 240V, 50Hz, Singlephase, 17A Max, Brushless',
           'Fuel Tank Capacity: 40 L (Diesel), canopy-integrated, Lube Oil: 1.5 L',
           'Battery: 12V 35Ah, Silencer integrated into canopy'
@@ -439,7 +439,7 @@ export const productsData = {
           'Height: 7.0 m (Ground Level to Light), Material: Mild Steel, 3mm thick',
           'Extension/Closing: Winch (Max. 5 minutes each), 359° manual rotation',
           'Wire rope metal: Stainless steel, size: 6mm',
-          'Riggers/Balancing Jacks: 4 nos. (Collapsible), Tyres: 2 Nos, Weight: Approx. 700kg'
+          'Riggers/Balancing Jacks: 4 nos. (Collapsible), Tyres: 2 Nos, Weight: 600kg'
         ]
       }
     ],
@@ -452,7 +452,7 @@ export const productsData = {
           category: 'Power & Engine System',
           items: [
             { name: 'Engine Model', value: 'KD15-441, Air Cooled' },
-            { name: 'Engine Make', value: 'Rehlko (KOHLER)' },
+            { name: 'Engine Make', value: 'Kohler' },
             { name: 'Rated Power & Speed', value: '8.1 BHP, RPM-3000' },
             { name: 'Alternator', value: 'Maccalte / NSM, 5 kVA Max, 240V, 50Hz, Singlephase, 17A Max, Brushless' },
             { name: 'Fuel Tank Capacity', value: '40 L (Diesel), Canopy-Integrated' },
@@ -494,7 +494,7 @@ export const productsData = {
             { name: 'Balancing Riggers', value: '4 Nos. Collapsible Balancing Jacks' },
             { name: 'Tyres', value: '2 Nos. Heavy Pneumatic Tyres' },
             { name: 'Overall Dimensions', value: 'Length: 1.4 - 1.5 m | Width: 1.1 - 1.2 m | Height: 2.4 - 2.5 m' },
-            { name: 'Gross Weight', value: 'Approx. 700 kg' },
+            { name: 'Gross Weight', value: '600 kg' },
             { name: 'Recommended Features', value: 'Separate Miniature Circuit Breaker • Earthing Provision' }
           ]
         },
@@ -1911,7 +1911,7 @@ export const productsData = {
     category: 'diesel',
     categoryName: 'Diesel Powered',
     tagline: 'Heavy-Duty Industrial Diesel Lighting Tower - 12.0M Mast',
-    description: 'Ariselux Equipment Company proudly presents its advanced LED Flood Light solution - engineered for maximum brightness, energy efficiency, and durability. Powered by an Escort Kubota diesel engine and 12-meter mast delivering 240,000 lumens.',
+    description: 'Ariselux Equipment Company proudly presents its advanced LED Flood Light solution - engineered for maximum brightness, energy efficiency, and durability. Powered by an Escorts Kubota diesel engine and 12-meter mast delivering 240,000 lumens.',
     image: '/images/products/Diesel oprated/ACE LT 12000 -1.png',
     gallery: [
       '/images/products/Diesel oprated/ACE LT 12000 -1.png',
@@ -1949,17 +1949,17 @@ export const productsData = {
     },
     tableSpecs: [
       {
-        engine: 'Escort Kubota 14.5 HP Water-Cooled Diesel',
+        engine: 'Escorts Kubota 14.5 HP Water-Cooled Diesel',
         generator: '220 Volts Connection Board Output',
         tankSize: '100 Liters (Diesel)',
         sockets: 'Weatherproof Output Sockets',
-        weight: '600 - 700 KG',
+        weight: '700 KG',
         dimensions: 'Travel: 2.3 x 1.4 x 2.4 m\nOperation: 2.6 x 2.4 x 12.0 m'
       }
     ],
     features: [
       '240,000 lumens total brightness',
-      'Japanese Escort Kubota 14.5 HP engine',
+      'Japanese Escorts Kubota 14.5 HP engine',
       '12-meter telescopic mast'
     ],
     highlights: [
@@ -1976,7 +1976,7 @@ export const productsData = {
         {
           category: 'Engine & Output',
           items: [
-            { name: 'Engine', value: 'Escort Kubota 14.5 HP Water-Cooled Diesel' },
+            { name: 'Engine', value: 'Escorts Kubota 14.5 HP Water-Cooled Diesel' },
             { name: 'Operating Speed', value: '1500 RPM' },
             { name: 'Tank Capacity', value: '100 Liters (80+ Hours Runtime)' },
             { name: 'Luminaires', value: '4 x 300W-500W LED (240,000 Lumens)' },

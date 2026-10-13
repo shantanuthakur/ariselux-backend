@@ -20,6 +20,72 @@ function createTransporter(cfg) {
   });
 }
 
+// SMTP connections from the hosted container can occasionally be reset after
+// the internal notification has been accepted.  A fresh connection and a
+// short retry make the customer receipt independent from that transient
+// failure.  Do not retry permanent recipient/authentication errors.
+const RETRYABLE_SMTP_CODES = new Set([
+  'ECONNRESET', 'ECONNREFUSED', 'EHOSTUNREACH', 'EPIPE', 'ESOCKET',
+  'ETIMEDOUT', 'EAI_AGAIN'
+]);
+
+const wait = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
+
+function normalizeEmailAddress(value) {
+  const match = String(value || '').match(/<([^>]+)>/);
+  return (match ? match[1] : value).trim().toLowerCase();
+}
+
+async function sendMailWithRetry(currentConfig, initialMailer, message, expectedRecipient, maxAttempts = 3) {
+  const expected = normalizeEmailAddress(expectedRecipient);
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    const mailer = attempt === 1 ? initialMailer : createTransporter(currentConfig);
+    if (!mailer) return { sent: false, reason: 'missing_credentials', attempts: attempt - 1 };
+
+    try {
+      const info = await mailer.sendMail(message);
+      const accepted = (info.accepted || []).map(normalizeEmailAddress);
+      const rejected = (info.rejected || []).map(normalizeEmailAddress);
+
+      if (expected && !accepted.includes(expected)) {
+        return {
+          sent: false,
+          reason: 'recipient_not_accepted',
+          error: `SMTP did not accept ${expectedRecipient}`,
+          accepted: info.accepted || [],
+          rejected: info.rejected || [],
+          attempts: attempt
+        };
+      }
+
+      return {
+        sent: true,
+        messageId: info.messageId,
+        accepted: info.accepted || [],
+        rejected: info.rejected || [],
+        attempts: attempt
+      };
+    } catch (err) {
+      lastError = err;
+      if (!RETRYABLE_SMTP_CODES.has(err.code) || attempt === maxAttempts) break;
+      await wait(attempt * 500);
+    } finally {
+      // Each retry must use a clean SMTP socket; closing is also safe after a
+      // successful one-off Nodemailer send.
+      mailer.close();
+    }
+  }
+
+  return {
+    sent: false,
+    error: lastError?.message || 'Unable to send email',
+    errorCode: lastError?.code,
+    attempts: maxAttempts
+  };
+}
+
 /**
  * Test SMTP connection & send a test email to sales desk
  */
@@ -269,10 +335,10 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background:#0f172a;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0f172a;padding:35px 0;">
+<body style="margin:0;padding:0;background:#f8fafc;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;padding:35px 0;">
     <tr><td align="center">
-      <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.3);">
+      <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 15px rgba(0,0,0,0.06);">
 
         <!-- HEADER: BRANDED BANNER -->
         <tr>
@@ -283,8 +349,8 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
                   <span style="display:inline-block;background:#1b5faa;color:#ffffff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:4px 10px;border-radius:4px;text-transform:uppercase;margin-bottom:8px;">
                     ARISELUX EQUIPMENTS PVT LTD
                   </span>
-                  <h1 style="margin:0;font-size:22px;color:#ffffff;font-weight:800;letter-spacing:-0.5px;">Quotation Request Received 📋</h1>
-                  <p style="margin:6px 0 0;font-size:13px;color:#e0f2fe;">Commercial Estimation &amp; Application Desk • Roorkee Works</p>
+                  <h1 style="margin:0;font-size:22px;color:#ffffff;font-weight:800;letter-spacing:-0.5px;">Quotation Request Received</h1>
+                  <p style="margin:6px 0 0;font-size:13px;color:#e0f2fe;">Commercial Estimation &amp; Application Desk &bull; Roorkee Works</p>
                 </td>
                 <td align="right" style="vertical-align:top;">
                   <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:8px 16px;text-align:center;">
@@ -411,12 +477,12 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
 
         <!-- FOOTER -->
         <tr>
-          <td style="background:#0b1e36;padding:22px 32px;text-align:center;">
-            <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#e2e8f0;">Ariselux Equipments Private Limited</p>
-            <p style="margin:0 0 6px;font-size:12px;color:#94a3b8;">${company.address}</p>
+          <td style="background:#f8fafc;padding:22px 32px;text-align:center;border-top:1px solid #e2e8f0;">
+            <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#0f172a;">Ariselux Equipments Private Limited</p>
+            <p style="margin:0 0 6px;font-size:12px;color:#64748b;">${company.address}</p>
             <p style="margin:0;font-size:12px;color:#64748b;">
-              <a href="mailto:${company.email}" style="color:#94a3b8;text-decoration:none;">${company.email}</a> · 
-              <a href="https://ariselux.com" style="color:#94a3b8;text-decoration:none;">ariselux.com</a> · Toll-Free: 1800 202 5104
+              <a href="mailto:${smtp.user}" style="color:#1b5faa;text-decoration:none;">${smtp.user}</a> &bull;
+              <a href="https://ariselux.com" style="color:#1b5faa;text-decoration:none;">ariselux.com</a> &bull; Toll-Free: 1800 202 5104
             </p>
           </td>
         </tr>
@@ -428,18 +494,23 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
 </html>`;
 
   try {
-    const textContent = `Dear ${quotation.name},\n\nThank you for reaching out to Ariselux Equipments Private Limited.\nOur sales engineering desk at Roorkee Works has registered your quotation request for ${quotation.product} (Qty: ${quotation.quantity || '1 Unit'}, Ref #${quotation.id}).\n\nOur sales team will prepare and share an official commercial proposal with technical datasheets within 2-4 business hours.\n\nNeed immediate assistance?\nPhone: ${company.phone}\nWhatsApp: https://wa.me/${company.whatsapp}\nEmail: ${company.email}\n\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
+    const textContent = `Dear ${quotation.name},\n\nThank you for reaching out to Ariselux Equipments Private Limited.\nOur sales engineering desk at Roorkee Works has registered your quotation request for ${quotation.product} (Qty: ${quotation.quantity || '1 Unit'}, Ref #${quotation.id}).\n\nOur sales team will prepare and share an official commercial proposal with technical datasheets within 2-4 business hours.\n\nNeed immediate assistance?\nPhone: ${company.phone}\nWhatsApp: https://wa.me/${company.whatsapp}\nEmail: ${smtp.user}\n\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
 
-    const info = await mailer.sendMail({
+    const delivery = await sendMailWithRetry(currentConfig, mailer, {
       from: `"Ariselux Equipments" <${smtp.user}>`,
       to: quotation.email,
-      replyTo: 'sales@ariselux.com',
+      replyTo: smtp.user,
       subject: `Quotation Request Received: ${quotation.product} (Ref #${quotation.id}) - Ariselux Equipments`,
       text: textContent,
       html: customerQuotationHtml
-    });
-    console.log(`[CUSTOMER QUOTATION ACK SENT]: Delivered to ${quotation.email} (ID: ${info.messageId})`);
-    return { sent: true, messageId: info.messageId };
+    }, quotation.email);
+
+    if (delivery.sent) {
+      console.log(`[CUSTOMER QUOTATION ACK SENT]: Accepted for ${quotation.email} (ID: ${delivery.messageId}, attempt ${delivery.attempts})`);
+    } else {
+      console.error(`[QUOTATION ACK EMAIL ERROR] Failed to send to ${quotation.email}:`, delivery.error || delivery.reason);
+    }
+    return delivery;
   } catch (err) {
     console.error(`[QUOTATION ACK EMAIL ERROR] Failed to send to ${quotation.email}:`, err.message);
     return { sent: false, error: err.message };
@@ -643,10 +714,10 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
 <!DOCTYPE html>
 <html>
 <head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;background:#0f172a;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#0f172a;padding:35px 0;">
+<body style="margin:0;padding:0;background:#f8fafc;font-family:'Segoe UI',Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;padding:35px 0;">
     <tr><td align="center">
-      <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.3);">
+      <table width="640" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;box-shadow:0 4px 15px rgba(0,0,0,0.06);">
 
         <!-- HEADER: BRANDED BANNER -->
         <tr>
@@ -657,8 +728,8 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
                   <span style="display:inline-block;background:#1b5faa;color:#ffffff;font-size:11px;font-weight:800;letter-spacing:1.5px;padding:4px 10px;border-radius:4px;text-transform:uppercase;margin-bottom:8px;">
                     ARISELUX EQUIPMENTS PVT LTD
                   </span>
-                  <h1 style="margin:0;font-size:22px;color:#ffffff;font-weight:800;letter-spacing:-0.5px;">Technical Enquiry Received 💬</h1>
-                  <p style="margin:6px 0 0;font-size:13px;color:#e0f2fe;">Factory Technical &amp; Application Desk • Roorkee Works</p>
+                  <h1 style="margin:0;font-size:22px;color:#ffffff;font-weight:800;letter-spacing:-0.5px;">Technical Enquiry Received</h1>
+                  <p style="margin:6px 0 0;font-size:13px;color:#e0f2fe;">Factory Technical &amp; Application Desk &bull; Roorkee Works</p>
                 </td>
                 <td align="right" style="vertical-align:top;">
                   <div style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.22);border-radius:8px;padding:8px 16px;text-align:center;">
@@ -766,12 +837,12 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
 
         <!-- FOOTER -->
         <tr>
-          <td style="background:#0b1e36;padding:22px 32px;text-align:center;">
-            <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#e2e8f0;">Ariselux Equipments Private Limited</p>
-            <p style="margin:0 0 6px;font-size:12px;color:#94a3b8;">${company.address}</p>
+          <td style="background:#f8fafc;padding:22px 32px;text-align:center;border-top:1px solid #e2e8f0;">
+            <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#0f172a;">Ariselux Equipments Private Limited</p>
+            <p style="margin:0 0 6px;font-size:12px;color:#64748b;">${company.address}</p>
             <p style="margin:0;font-size:12px;color:#64748b;">
-              <a href="mailto:${company.email}" style="color:#94a3b8;text-decoration:none;">${company.email}</a> · 
-              <a href="https://ariselux.com" style="color:#94a3b8;text-decoration:none;">ariselux.com</a> · Toll-Free: 1800 202 5104
+              <a href="mailto:${smtp.user}" style="color:#1b5faa;text-decoration:none;">${smtp.user}</a> &bull;
+              <a href="https://ariselux.com" style="color:#1b5faa;text-decoration:none;">ariselux.com</a> &bull; Toll-Free: 1800 202 5104
             </p>
           </td>
         </tr>
@@ -783,18 +854,23 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
 </html>`;
 
   try {
-    const textContent = `Dear ${enquiry.name},\n\nThank you for consulting with Ariselux Equipments Private Limited.\nOur factory technical engineering desk at Roorkee Works has received your inquiry regarding ${enquiry.product} (Nature: ${enquiry.enquiryType || 'Technical Consultation'}, Ref #${enquiry.id}).\n\nAn application engineer will reach out via your preferred channel (${enquiry.preferredChannel || 'WhatsApp'}) within 2-4 business hours.\n\nDirect Factory Desk:\nPhone: ${company.phone}\nWhatsApp: https://wa.me/${company.whatsapp}\nEmail: ${company.email}\n\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
+    const textContent = `Dear ${enquiry.name},\n\nThank you for consulting with Ariselux Equipments Private Limited.\nOur factory technical engineering desk at Roorkee Works has received your inquiry regarding ${enquiry.product} (Nature: ${enquiry.enquiryType || 'Technical Consultation'}, Ref #${enquiry.id}).\n\nAn application engineer will reach out via your preferred channel (${enquiry.preferredChannel || 'WhatsApp'}) within 2-4 business hours.\n\nDirect Factory Desk:\nPhone: ${company.phone}\nWhatsApp: https://wa.me/${company.whatsapp}\nEmail: ${smtp.user}\n\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
 
-    const info = await mailer.sendMail({
+    const delivery = await sendMailWithRetry(currentConfig, mailer, {
       from: `"Ariselux Equipments" <${smtp.user}>`,
       to: enquiry.email,
-      replyTo: 'sales@ariselux.com',
+      replyTo: smtp.user,
       subject: `Technical Enquiry Received: ${enquiry.enquiryType || 'Consultation'} (Ref #${enquiry.id}) - Ariselux Equipments`,
       text: textContent,
       html: customerEnquiryHtml
-    });
-    console.log(`[CUSTOMER ENQUIRY ACK SENT]: Delivered to ${enquiry.email} (ID: ${info.messageId})`);
-    return { sent: true, messageId: info.messageId };
+    }, enquiry.email);
+
+    if (delivery.sent) {
+      console.log(`[CUSTOMER ENQUIRY ACK SENT]: Accepted for ${enquiry.email} (ID: ${delivery.messageId}, attempt ${delivery.attempts})`);
+    } else {
+      console.error(`[ENQUIRY ACK EMAIL ERROR] Failed to send to ${enquiry.email}:`, delivery.error || delivery.reason);
+    }
+    return delivery;
   } catch (err) {
     console.error(`[ENQUIRY ACK EMAIL ERROR] Failed to send to ${enquiry.email}:`, err.message);
     return { sent: false, error: err.message };

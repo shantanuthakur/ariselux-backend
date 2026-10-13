@@ -234,11 +234,14 @@ export async function sendQuotationNotification(quotation) {
   }
 
   try {
+    const textContent = `New Commercial Quotation Request (Ref #${quotation.id})\n\nModel: ${quotation.product}\nQuantity: ${quotation.quantity || '1 Unit'}\nDelivery Timeline: ${quotation.deliveryTimeline || 'Immediate Dispatch'}\nDelivery Location: ${quotation.deliveryLocation || quotation.location || 'N/A'}\n\nBuyer Details:\nName: ${quotation.name}\nCompany: ${quotation.company || 'Direct Buyer'}\nPhone: ${quotation.phone}\nEmail: ${quotation.email}\nGSTIN: ${quotation.gstin || 'N/A'}\n\nRequirements / Notes:\n${quotation.specifications || quotation.message || 'Standard deployment'}\n\nSource: ${quotation.source || 'Website'}`;
+
     const info = await mailer.sendMail({
       from: `"Ariselux Quotation Desk" <${smtp.user}>`,
       to: company.email,
-      replyTo: quotation.email || undefined,
-      subject: `📋 [COMMERCIAL RFQ] Quotation Request: ${quotation.product} (${quotation.quantity || '1 Unit'}) — ${quotation.name} (${quotation.company || 'Direct'}) [Ref #${quotation.id}]`,
+      replyTo: quotation.email || company.email,
+      subject: `Commercial RFQ: ${quotation.product} (${quotation.quantity || '1 Unit'}) - ${quotation.name} (Ref ${quotation.id})`,
+      text: textContent,
       html: quotationSalesHtml
     });
     console.log(`[QUOTATION SALES EMAIL SENT]: Delivered to ${company.email} (ID: ${info.messageId})`);
@@ -425,11 +428,14 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
 </html>`;
 
   try {
+    const textContent = `Dear ${quotation.name},\n\nThank you for reaching out to Ariselux Equipments Private Limited.\nOur sales engineering desk at Roorkee Works has registered your quotation request for ${quotation.product} (Qty: ${quotation.quantity || '1 Unit'}, Ref #${quotation.id}).\n\nOur sales team will prepare and share an official commercial proposal with technical datasheets within 2-4 business hours.\n\nNeed immediate assistance?\nPhone: ${company.phone}\nWhatsApp: https://wa.me/${company.whatsapp}\nEmail: ${company.email}\n\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
+
     const info = await mailer.sendMail({
-      from: `"Ariselux Quotation Desk" <${smtp.user}>`,
+      from: `"Ariselux Equipments" <${smtp.user}>`,
       to: quotation.email,
-      replyTo: company.email,
-      subject: `Official Commercial Quotation Request Received: ${quotation.product} [Ref #${quotation.id}] — Ariselux Equipments`,
+      replyTo: 'sales@ariselux.com',
+      subject: `Quotation Request Received: ${quotation.product} (Ref #${quotation.id}) - Ariselux Equipments`,
+      text: textContent,
       html: customerQuotationHtml
     });
     console.log(`[CUSTOMER QUOTATION ACK SENT]: Delivered to ${quotation.email} (ID: ${info.messageId})`);
@@ -602,11 +608,14 @@ export async function sendEnquiryNotification(enquiry) {
   }
 
   try {
+    const textContent = `New Technical Enquiry (Ref #${enquiry.id})\n\nNature: ${enquiry.enquiryType || 'General Enquiry'}\nModel / Topic: ${enquiry.product}\nProject: ${enquiry.projectType || 'General Infrastructure'}\nPreferred Channel: ${enquiry.preferredChannel || 'WhatsApp'}\n\nCustomer Details:\nName: ${enquiry.name}\nPhone: ${enquiry.phone}\nEmail: ${enquiry.email || 'N/A'}\nCompany: ${enquiry.company || 'N/A'}\nLocation: ${enquiry.location || 'N/A'}\n\nQuery Details:\n${enquiry.message || 'N/A'}\n\nSource: ${enquiry.source || 'Website'}`;
+
     const info = await mailer.sendMail({
       from: `"Ariselux Technical Desk" <${smtp.user}>`,
       to: company.email,
-      replyTo: enquiry.email || undefined,
-      subject: `📩 [TECHNICAL ENQUIRY] ${enquiry.enquiryType || 'General Enquiry'}: ${enquiry.product} — ${enquiry.name} [Ref #${enquiry.id}]`,
+      replyTo: enquiry.email || company.email,
+      subject: `Technical Enquiry: ${enquiry.enquiryType || 'Consultation'} - ${enquiry.name} (Ref #${enquiry.id})`,
+      text: textContent,
       html: enquirySalesHtml
     });
     console.log(`[ENQUIRY SALES EMAIL SENT]: Delivered to ${company.email} (ID: ${info.messageId})`);
@@ -774,11 +783,14 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
 </html>`;
 
   try {
+    const textContent = `Dear ${enquiry.name},\n\nThank you for consulting with Ariselux Equipments Private Limited.\nOur factory technical engineering desk at Roorkee Works has received your inquiry regarding ${enquiry.product} (Nature: ${enquiry.enquiryType || 'Technical Consultation'}, Ref #${enquiry.id}).\n\nAn application engineer will reach out via your preferred channel (${enquiry.preferredChannel || 'WhatsApp'}) within 2-4 business hours.\n\nDirect Factory Desk:\nPhone: ${company.phone}\nWhatsApp: https://wa.me/${company.whatsapp}\nEmail: ${company.email}\n\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
+
     const info = await mailer.sendMail({
-      from: `"Ariselux Technical Desk" <${smtp.user}>`,
+      from: `"Ariselux Equipments" <${smtp.user}>`,
       to: enquiry.email,
-      replyTo: company.email,
-      subject: `We have received your technical enquiry: ${enquiry.enquiryType || 'General Consultation'} [Ref #${enquiry.id}] — Ariselux Equipments`,
+      replyTo: 'sales@ariselux.com',
+      subject: `Technical Enquiry Received: ${enquiry.enquiryType || 'Consultation'} (Ref #${enquiry.id}) - Ariselux Equipments`,
+      text: textContent,
       html: customerEnquiryHtml
     });
     console.log(`[CUSTOMER ENQUIRY ACK SENT]: Delivered to ${enquiry.email} (ID: ${info.messageId})`);
@@ -940,11 +952,14 @@ export async function sendCareerApplicationNotification(application, file) {
   }
 
   try {
+    const textContent = `New Job Application Received (Ref #${application.id})\n\nCandidate: ${application.fullName}\nRole Applied: ${application.role}\nPhone: ${application.phone}\nEmail: ${application.email}\nExperience: ${application.experience || 'N/A'}\n\nSummary:\n${application.summary || 'N/A'}\n\nResume attached: ${file ? file.originalname : 'None'}`;
+
     const info = await mailer.sendMail({
       from: `"${currentConfig.company.name}" <${smtp.fromEmail}>`,
       to: company.email,
       replyTo: application.email,
-      subject: `New Job Application: ${application.role} - ${application.fullName} [Ref #${application.id}] 📄`,
+      subject: `Job Application: ${application.role} - ${application.fullName} (Ref #${application.id})`,
+      text: textContent,
       html: html,
       attachments: attachments
     });
@@ -1002,11 +1017,14 @@ export async function sendApplicantAcknowledgment(application) {
   }
 
   try {
+    const textContent = `Dear ${application.fullName},\n\nThank you for applying for the position of ${application.role} at Ariselux Equipments Private Limited (Application ID: #${application.id}).\n\nWe have received your application and resume. Our engineering and talent acquisition team will review your qualifications and reach out if your profile matches our requirements.\n\nBest regards,\nTalent Acquisition Team\nAriselux Equipments Private Limited\nRoorkee Works, Uttarakhand, India`;
+
     const info = await mailer.sendMail({
       from: `"${currentConfig.company.name}" <${smtp.fromEmail}>`,
       to: application.email,
-      replyTo: company.email,
-      subject: `Application Received: ${application.role} [Ref #${application.id}] — Ariselux Equipments`,
+      replyTo: 'sales@ariselux.com',
+      subject: `Application Received: ${application.role} (Ref #${application.id}) - Ariselux Equipments`,
+      text: textContent,
       html: html
     });
     return { sent: true, messageId: info.messageId };

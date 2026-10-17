@@ -175,13 +175,13 @@ export const productsData = {
     categoryName: 'Diesel Powered',
     tagline: 'High-Efficiency Air-Cooled Diesel Mobile Lighting Tower - 9.0M Mast',
     description: 'The ACE LT 9000 is an industrial-grade mobile lighting tower powered by an air-cooled KD15-441 Kohler engine (8.1 BHP @ 3000 RPM) and Maccalte/NSM 5 kVA brushless alternator. Driving 4 high-power 400W LED floodlights delivering 2,32,000 lumens across 7,000 square meters on a 9.0-meter telescopic mast with 359° rotation.',
-    image: '/images/products/Diesel oprated/ACE LT 9000 -1.png',
+    image: '/images/products/Diesel oprated/ACE LT 9000(1).png',
     gallery: [
-      '/images/products/Diesel oprated/ACE LT 9000 -1.png',
-      '/images/products/Diesel oprated/ACE LT 9000 -2.png',
-      '/images/products/Diesel oprated/ACE LT 9000 -3.png'
+      '/images/products/Diesel oprated/ACE LT 9000(1).png',
+      '/images/products/Diesel oprated/ACE LT 9000(2).png',
+      '/images/products/Diesel oprated/ACE LT 9000(3).png'
     ],
-    featureImage: '/images/features/features-diesel-9000.jpg',
+    featureImage: '/images/features/features-diesel-6000.jpg',
     bestFor: [
       {
         title: 'National Highway & Expressway Night Paving',
@@ -349,11 +349,11 @@ export const productsData = {
     categoryName: 'Diesel Powered',
     tagline: 'Reliable 4-Light Diesel Mobile Lighting Tower - 7.0M Mast',
     description: 'The ACE LT 6000 is engineered for continuous night operations on highways, construction jobs, and municipal maintenance. Powered by an air-cooled KD15-441 Kohler engine (8.1 BHP @ 3000 RPM) with Maccalte/NSM 5 kVA brushless alternator and a 40-liter canopy tank, it drives 4 LED floodlights (1600W total) generating 2,32,000 lumens covering up to 5,000 square meters.',
-    image: '/images/products/Diesel oprated/ACE LT 6000 -1.png',
+    image: '/images/products/Diesel oprated/ACE LT 6000(1).png',
     gallery: [
-      '/images/products/Diesel oprated/ACE LT 6000 -1.png',
-      '/images/products/Diesel oprated/ACE LT 6000 -2.png',
-      '/images/products/Diesel oprated/ACE LT 6000 -3.png'
+      '/images/products/Diesel oprated/ACE LT 6000(1).png',
+      '/images/products/Diesel oprated/ACE LT 6000(2).png',
+      '/images/products/Diesel oprated/ACE LT 6000(3).png'
     ],
     featureImage: '/images/features/features-diesel-6000.jpg',
     bestFor: [
@@ -679,11 +679,9 @@ export const productsData = {
     categoryName: 'Petrol Operated',
     tagline: 'Compact Portable Honda-Powered Petrol Light Tower - 4.0M Mast',
     description: 'The ACE PLT 4000 is a lightweight, ultra-portable mobile lighting tower powered by a genuine Honda EP-1000 generator (CPCB Approved, 750VA). Delivering 69,600 lumens from 6 energy-efficient 80W LED floodlights (145 lm/w, IP67) on a 4-meter telescopic anodized aluminum mast with pneumatic and manual raising.',
-    image: '/images/products/Petrol oprated/petrol-angle1.jpeg',
+    image: '/images/products/Petrol oprated/ACE PLT 4000.png',
     gallery: [
-      '/images/products/Petrol oprated/petrol-angle1.jpeg',
-      '/images/products/Petrol oprated/petrol-angle2.jpg',
-      '/images/products/Petrol oprated/petrol-angle3.jpg'
+      '/images/products/Petrol oprated/ACE PLT 4000.png'
     ],
     featureImage: '/images/features/features-petrol.jpg',
     bestFor: [
@@ -836,13 +834,13 @@ export const productsData = {
     categoryName: 'Battery & Petrol Operated',
     tagline: 'Hybrid Battery & AC Mobile Light Tower - 4.0M Mast',
     description: 'The ACE PBLT 4000 is an advanced portable battery-operated mobile lighting tower delivering 51,000 lumens from 6 x 60W LED luminaires. Powered by a 48V 60Ah battery bank providing up to 12 hours backup, with a 4.0-meter anodized aluminum telescopic mast and 16A AC socket for continuous operation.',
-    image: '/images/products/Petrol oprated/petrol-angle1.jpeg',
+    image: '/images/products/Battery-Petrol Hybrid/PBLT 4000(1).png',
     gallery: [
-      '/images/products/Petrol oprated/petrol-angle1.jpeg',
-      '/images/products/Petrol oprated/petrol-angle2.jpg',
-      '/images/products/Petrol oprated/petrol-angle3.jpg'
+      '/images/products/Battery-Petrol Hybrid/PBLT 4000(1).png',
+      '/images/products/Battery-Petrol Hybrid/PBLT 4000(2).png',
+      '/images/products/Battery-Petrol Hybrid/PBLT 4000(3).png'
     ],
-    featureImage: '/images/features/features-petrol.jpg',
+    featureImage: '/images/features/features-hybrid.jpg',
     bestFor: [
       {
         title: 'Fast-Response Highway Paving & Asphalt Repairs',
@@ -1000,11 +998,9 @@ export const productsData = {
     categoryName: 'Inflatable Tower',
     tagline: '360° Glare-Free 42,000 Lumens Inflatable Balloon Light Tower',
     description: 'The ACE 1.2 IT 4500 is a revolutionary inflatable column light tower providing 360-degree glare-free diffused illumination across 10,000 square meters. Featuring an onboard 230V 1200VA power system with an 8-liter fuel tank and automatic air blower, the cylinder inflates to 4.5 meters in under 60 seconds.',
-    image: '/images/products/Inflatable tower/inflatable-angle1.jpg',
+    image: '/images/products/Inflatable tower/ACE 1.2 IT 4500.png',
     gallery: [
-      '/images/products/Inflatable tower/inflatable-angle1.jpg',
-      '/images/products/Inflatable tower/inflatable-angle2.jpg',
-      '/images/products/Inflatable tower/inflatable-angle3.png'
+      '/images/products/Inflatable tower/ACE 1.2 IT 4500.png'
     ],
     featureImage: '/images/features/features-inflatable.jpg',
     bestFor: [
@@ -1117,13 +1113,11 @@ export const productsData = {
     categoryName: 'Solar Operated',
     tagline: '5.0 KVA Inverter Solar Mobile Light Tower - 7.0M Mast',
     description: 'The ACE 5 SLT 6000 is our heavy-duty zero-fuel, zero-emission solar mobile lighting tower equipped with a heavy-duty 5.0 kVA pure sine wave inverter, 4 sliding solar panels (2380W total), 48V MPPT controller, and 7.2 kWh LiFePO4 battery bank powering 4 LED floodlights (87,000 lumens) on a 7.0-meter 359° rotatable mast.',
-    image: '/images/products/Solar Oprated/solar-angle1.png',
+    image: '/images/products/Solar Oprated/Solar-Powered Light Tower Trailer.png',
     gallery: [
-      '/images/products/Solar Oprated/solar-angle1.png',
-      '/images/products/Solar Oprated/solar-angle2.jpg',
-      '/images/products/Solar Oprated/solar-angle3.jpg'
+      '/images/products/Solar Oprated/Solar-Powered Light Tower Trailer.png'
     ],
-    featureImage: '/images/features/features-solar.jpg',
+    featureImage: '/images/features/features-solar-5slt.jpg',
     bestFor: [
       {
         title: 'Eco-Sensitive Infrastructure & Green Construction Sites',
@@ -1269,13 +1263,11 @@ export const productsData = {
     categoryName: 'Solar Operated',
     tagline: '3.0 KVA Inverter Solar Mobile Light Tower - 7.0M Mast',
     description: 'The ACE 3 SLT 6000 is our heavy-duty zero-fuel, zero-emission solar mobile lighting tower equipped with a 3.0 kVA pure sine wave inverter, 4 sliding solar panels (2380W total), 48V MPPT controller, and 7.2 kWh LiFePO4 battery bank powering 4 LED floodlights (87,000 lumens) on a 7.0-meter 359° rotatable mast.',
-    image: '/images/products/Solar Oprated/solar-angle1.png',
+    image: '/images/products/Solar Oprated/Solar-Powered Light Tower Trailer.png',
     gallery: [
-      '/images/products/Solar Oprated/solar-angle1.png',
-      '/images/products/Solar Oprated/solar-angle2.jpg',
-      '/images/products/Solar Oprated/solar-angle3.jpg'
+      '/images/products/Solar Oprated/Solar-Powered Light Tower Trailer.png'
     ],
-    featureImage: '/images/features/features-solar.jpg',
+    featureImage: '/images/features/features-solar-3slt.jpg',
     bestFor: [
       {
         title: 'Eco-Sensitive Infrastructure & Green Construction Sites',
@@ -1425,7 +1417,7 @@ export const productsData = {
     gallery: [
       '/images/products/Solar Oprated/solar new 1.png',
       '/images/products/Solar Oprated/solar new 2.png',
-      '/images/products/Solar Oprated/solar new 3.png'
+      '/images/products/Solar Oprated/Solar new 3.png'
     ],
     featureImage: '/images/features/features-solar-surveillance.jpg',
     bestFor: [
@@ -1534,13 +1526,12 @@ export const productsData = {
     categoryName: 'Battery Operated',
     tagline: 'Tactical 4-Light Lithium Portable Light Tower - 2.0M Mast',
     description: 'The ACE B -04 is a rugged tactical battery-operated mobile light tower. Equipped with a 100AH 12V Lithium battery bank, it powers 4 x 50W high-power cool white LED lights delivering 20,000 to 28,000 lumens. Features a 2.0-meter telescopic MS rod tower, waterproof ABS black body, and 3-mode dimmer (HIGH-LOW-MEDIUM) with 6-8 hours backup.',
-    image: '/images/products/Battery oprated/b04-angle1.jpg',
+    image: '/images/products/Battery oprated/ACE B004(1).png',
     gallery: [
-      '/images/products/Battery oprated/b04-angle1.jpg',
-      '/images/products/Battery oprated/b04-angle2.jpg',
-      '/images/products/Battery oprated/b04-angle3.jpg'
+      '/images/products/Battery oprated/ACE B004(1).png',
+      '/images/products/Battery oprated/ACE B004(2).png'
     ],
-    featureImage: '/images/features/features-battery.jpg',
+    featureImage: '/images/features/features-b04.jpg',
     bestFor: [
       {
         title: 'Underground Metro & Tunnel Maintenance (Zero Fumes)',
@@ -1671,13 +1662,12 @@ export const productsData = {
     categoryName: 'Battery Operated',
     tagline: 'Dual-Light Portable Lithium Battery Tower - 102CM Mast',
     description: 'The ACE B -02 is an ultra-portable twin-head tactical battery lighting tower. Featuring a 75AH 12V Lithium battery, it drives 2 x 50W high-power cool white LEDs delivering 10,000 lumens. Features a 102cm expandable telescopic MS rod, 4-mode dimmer (Low-Medium-High-SOS), ABS black housing, and 6-7 hours backup.',
-    image: '/images/products/Battery oprated/b02-angle1.jpg',
+    image: '/images/products/Battery oprated/ACE B002(1).png',
     gallery: [
-      '/images/products/Battery oprated/b02-angle1.jpg',
-      '/images/products/Battery oprated/b02-angle2.jpg',
-      '/images/products/Battery oprated/b02-angle3.jpg'
+      '/images/products/Battery oprated/ACE B002(1).png',
+      '/images/products/Battery oprated/ACE B002(2).png'
     ],
-    featureImage: '/images/features/features-battery.jpg',
+    featureImage: '/images/features/features-b02.jpg',
     bestFor: [
       {
         title: 'Tactical Night Inspection & Emergency Vehicle Breakdown',
@@ -1807,13 +1797,13 @@ export const productsData = {
     categoryName: 'Battery Operated',
     tagline: 'Ultra-Compact 5,000 Lumens Portable Light Tower',
     description: 'The ACE B -01 is an ultra-compact single-head portable lithium light tower providing 5,000 lumens from a 50W LED fixture. Delivers 8-9 hours battery backup in an ultra-lightweight 12 kg tactical carry case with 1.0-1.5 meter telescopic mast.',
-    image: '/images/products/Battery oprated/b01-angle1.jpg',
+    image: '/images/products/Battery oprated/ACE B001(2).png',
     gallery: [
-      '/images/products/Battery oprated/b01-angle1.jpg',
-      '/images/products/Battery oprated/b01-angle2.jpg',
-      '/images/products/Battery oprated/b01-angle3.jpg'
+      '/images/products/Battery oprated/ACE B001(2).png',
+      '/images/products/Battery oprated/ACE B001 (1).png',
+      '/images/products/Battery oprated/ACE B001(3).png'
     ],
-    featureImage: '/images/features/features-battery.jpg',
+    featureImage: '/images/features/features-b01.jpg',
     bestFor: [
       {
         title: 'Rapid Roadside Trench & Water Pipeline Repairs',

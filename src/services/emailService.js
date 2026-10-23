@@ -1003,7 +1003,7 @@ export async function sendCareerApplicationNotification(application, file) {
         <!-- FOOTER -->
         <tr>
           <td style="background:#f8fafc;padding:18px 32px;border-top:1px solid #e2e8f0;font-size:12px;color:#64748b;text-align:center;">
-            Ariselux Equipments Private Limited &bull; LATIFPUR, Bhagwanpur - Roorkee, Uttarakhand &bull; Tel: +91-8126732502
+            Ariselux Equipments Private Limited &bull; LATIFPUR, Bhagwanpur - Roorkee, Uttarakhand &bull; Tel: <a href="tel:+918923730881" style="color:#64748b;text-decoration:none;">+91 89237 30881</a>
           </td>
         </tr>
       </table>

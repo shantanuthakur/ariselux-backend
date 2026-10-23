@@ -97,7 +97,7 @@ export async function createQuotation(req, res, next) {
     if (!checkRateLimit(req, 'quotation')) {
       return res.status(429).json({
         success: false,
-        message: 'Too many quotation requests submitted. Please connect directly via WhatsApp at +91-8126732502.'
+        message: 'Too many quotation requests submitted. Please connect directly via WhatsApp at +91 89237 30881.'
       });
     }
 
@@ -226,7 +226,7 @@ export async function createEnquiry(req, res, next) {
     if (!checkRateLimit(req, 'enquiry')) {
       return res.status(429).json({
         success: false,
-        message: 'Too many enquiry requests submitted. Please connect directly via WhatsApp at +91-8126732502.'
+        message: 'Too many enquiry requests submitted. Please connect directly via WhatsApp at +91 89237 30881.'
       });
     }
 

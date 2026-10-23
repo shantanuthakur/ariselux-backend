@@ -66,7 +66,7 @@ CLIENT_ORIGIN=http://localhost:3000
 ADMIN_API_KEY=replace-with-a-long-random-admin-key
 
 COMPANY_EMAIL=sales@ariselux.com
-COMPANY_PHONE=+918126732502
+COMPANY_PHONE=+918923730881
 
 # Optional SMTP Settings (leave blank for development console logging)
 SMTP_HOST=smtp.gmail.com

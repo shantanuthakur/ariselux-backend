@@ -463,10 +463,10 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
               <table cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:20px;font-size:13px;">
-                    📞 <a href="tel:${company.phone}" style="color:#2563eb;font-weight:700;text-decoration:none;">${company.phone}</a>
+                    📞 <a href="tel:+918923730881" style="color:#2563eb;font-weight:700;text-decoration:none;">+91 89237 30881</a>
                   </td>
                   <td style="font-size:13px;">
-                    💬 <a href="https://wa.me/${company.whatsapp}" style="color:#16a34a;font-weight:700;text-decoration:none;">Connect on WhatsApp</a>
+                    💬 <a href="https://wa.me/918923730881" target="_blank" style="color:#16a34a;font-weight:700;text-decoration:none;">Connect on WhatsApp (+91 89237 30881)</a>
                   </td>
                 </tr>
               </table>
@@ -482,7 +482,7 @@ export async function sendCustomerQuotationAcknowledgment(quotation) {
             <p style="margin:0 0 6px;font-size:12px;color:#64748b;">${company.address}</p>
             <p style="margin:0;font-size:12px;color:#64748b;">
               <a href="mailto:${smtp.user}" style="color:#1b5faa;text-decoration:none;">${smtp.user}</a> &bull;
-              <a href="https://ariselux.com" style="color:#1b5faa;text-decoration:none;">ariselux.com</a> &bull; Toll-Free: 1800 202 5104
+              <a href="https://ariselux.com" style="color:#1b5faa;text-decoration:none;">ariselux.com</a> &bull; Direct: <a href="tel:+918923730881" style="color:#1b5faa;font-weight:700;text-decoration:none;">+91 89237 30881</a> &bull; WhatsApp: <a href="https://wa.me/918923730881" target="_blank" style="color:#16a34a;font-weight:700;text-decoration:none;">+91 89237 30881</a> &bull; Toll-Free: <a href="tel:18002025104" style="color:#64748b;text-decoration:none;">1800 202 5104</a>
             </p>
           </td>
         </tr>
@@ -823,10 +823,10 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
               <table cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding-right:20px;font-size:13px;">
-                    📞 <a href="tel:${company.phone}" style="color:#2563eb;font-weight:700;text-decoration:none;">${company.phone}</a>
+                    📞 <a href="tel:+918923730881" style="color:#2563eb;font-weight:700;text-decoration:none;">+91 89237 30881</a>
                   </td>
                   <td style="font-size:13px;">
-                    💬 <a href="https://wa.me/${company.whatsapp}" style="color:#16a34a;font-weight:700;text-decoration:none;">Chat on WhatsApp</a>
+                    💬 <a href="https://wa.me/918923730881" target="_blank" style="color:#16a34a;font-weight:700;text-decoration:none;">Chat on WhatsApp (+91 89237 30881)</a>
                   </td>
                 </tr>
               </table>
@@ -842,7 +842,7 @@ export async function sendCustomerEnquiryAcknowledgment(enquiry) {
             <p style="margin:0 0 6px;font-size:12px;color:#64748b;">${company.address}</p>
             <p style="margin:0;font-size:12px;color:#64748b;">
               <a href="mailto:${smtp.user}" style="color:#1b5faa;text-decoration:none;">${smtp.user}</a> &bull;
-              <a href="https://ariselux.com" style="color:#1b5faa;text-decoration:none;">ariselux.com</a> &bull; Toll-Free: 1800 202 5104
+              <a href="https://ariselux.com" style="color:#1b5faa;text-decoration:none;">ariselux.com</a> &bull; Direct: <a href="tel:+918923730881" style="color:#1b5faa;font-weight:700;text-decoration:none;">+91 89237 30881</a> &bull; WhatsApp: <a href="https://wa.me/918923730881" target="_blank" style="color:#16a34a;font-weight:700;text-decoration:none;">+91 89237 30881</a> &bull; Toll-Free: <a href="tel:18002025104" style="color:#64748b;text-decoration:none;">1800 202 5104</a>
             </p>
           </td>
         </tr>
@@ -1077,7 +1077,7 @@ export async function sendApplicantAcknowledgment(application) {
               &bull; Application ID: <strong>#${application.id}</strong><br>
               &bull; Date Submitted: <strong>${new Date().toLocaleDateString('en-IN', { dateStyle: 'long' })}</strong>
             </div>
-            <p>If you have any questions or additional documents to share, feel free to reply to this email or reach us at <a href="mailto:sales@ariselux.com" style="color:#1b5faa;font-weight:600;">sales@ariselux.com</a>.</p>
+            <p>If you have any questions or additional documents to share, feel free to call us at <a href="tel:+918923730881" style="color:#1b5faa;font-weight:700;text-decoration:none;">+91 89237 30881</a>, WhatsApp us at <a href="https://wa.me/918923730881" target="_blank" style="color:#16a34a;font-weight:700;text-decoration:none;">+91 89237 30881</a>, or reply to this email.</p>
             <p style="margin-top:25px;">Best regards,<br><strong>Talent Acquisition Team</strong><br>Ariselux Equipments Private Limited<br>Bhagwanpur - Roorkee, Uttarakhand, India</p>
           </td>
         </tr>

@@ -29,8 +29,8 @@ export function getConfig() {
       name: 'Ariselux Equipments Private Limited',
       email: process.env.COMPANY_EMAIL || 'sales@ariselux.com',
       phone: process.env.COMPANY_PHONE || '+918923730881',
-      address: 'Plot No. 25, Sector 8A, IIE SIDCUL, Roorkee - 249403, Uttarakhand, India',
-      whatsapp: process.env.COMPANY_PHONE ? process.env.COMPANY_PHONE.replace(/[^0-9]/g, '') : '918923730881'
+      address: 'Khasra No. 618 Latifpur Khubbanpur - 247661, Bhagwanpur - Roorkee, Uttarakhand, India',
+      whatsapp: ((process.env.COMPANY_PHONE || '').replace(/[^0-9]/g, '')) || '918923730881'
     },
     smtp: {
       host: process.env.SMTP_HOST || '',

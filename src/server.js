@@ -6,12 +6,12 @@ const PORT = config.port;
 
 const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n======================================================`);
-  console.log(`🚀 Ariselux Backend Server Running on port ${PORT}`);
-  console.log(`📡 Environment: ${config.nodeEnv}`);
-  console.log(`🔗 API Base: http://localhost:${PORT}/api`);
-  console.log(`🩺 Health:   http://localhost:${PORT}/api/health`);
-  console.log(`📨 Inquiries: http://localhost:${PORT}/api/inquiries`);
-  console.log(`📦 Products:  http://localhost:${PORT}/api/products`);
+  console.log(` Ariselux Backend Server Running on port ${PORT}`);
+  console.log(` Environment: ${config.nodeEnv}`);
+  console.log(` API Base: http://localhost:${PORT}/api`);
+  console.log(` Health:   http://localhost:${PORT}/api/health`);
+  console.log(` Inquiries: http://localhost:${PORT}/api/inquiries`);
+  console.log(` Products:  http://localhost:${PORT}/api/products`);
   console.log(`======================================================\n`);
   logStartup(PORT, config.nodeEnv);
 });

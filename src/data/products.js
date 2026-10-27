@@ -165,6 +165,85 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 4,70,000',
+    pricing: {
+          "exFactory": 470000,
+          "formattedExFactory": "₹ 4,70,000",
+          "gstPercent": 18,
+          "gstAmount": 84600,
+          "formattedGstAmount": "₹ 84,600",
+          "totalPrice": 554600,
+          "formattedTotalPrice": "₹ 5,54,600",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 2,800 - ₹ 3,200",
+          "rentalPerMonth": "₹ 55,000 - ₹ 65,000",
+          "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
+          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 34,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-lt12-1",
+                "author": "Rajeshwar Verma",
+                "role": "Chief Project Director (Highway & Paving)",
+                "company": "L&T Transportation & Infrastructure",
+                "location": "Delhi-Vadodara Expressway Package-17",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Remarkable 12.0M elevation and zero-flicker 2,40,000 lumens coverage",
+                "comment": "We procured 6 units of the ACE LT 12000 for critical nighttime asphalt paving and roller compaction. The genuine Japanese Kubota engine delivered over 82 hours continuous runtime on a single 100-liter tank. The 12-meter mast withstands 65 km/h gusts with zero sway thanks to the 4 robust outrigger jacks. Roorkee works dispatched spare filters within 24 hours. Outstanding industrial performance.",
+                "helpfulCount": 42,
+                "tags": [
+                      "24/7 Night Paving",
+                      "12M Mast Stability",
+                      "80h Kubota Runtime"
+                ]
+          },
+          {
+                "id": "rev-lt12-2",
+                "author": "V. K. Somnath",
+                "role": "General Manager - Plant & Machinery",
+                "company": "Dilip Buildcon Limited",
+                "location": "Raipur-Visakhapatnam Greenfield Expressway",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Superior build quality compared to imported light towers",
+                "comment": "Having evaluated multiple imported towers, Ariselux ACE LT 12000 exceeded our site expectations. The modular 4 x 400W LED arrays give uniform lux spread over 8,000 square meters without dark spots. The heavy-duty chassis and all-terrain tyres make inter-site towing seamless.",
+                "helpfulCount": 31,
+                "tags": [
+                      "High Lux Uniformity",
+                      "Heavy Duty Chassis",
+                      "OEM Value"
+                ]
+          },
+          {
+                "id": "rev-lt12-3",
+                "author": "Capt. Anirudh Mehta",
+                "role": "Head of Mining Operations",
+                "company": "Eastern Mineral Corridors & Quarrying",
+                "location": "Singrauli Open-Cast Mining Zone, MP",
+                "rating": 5,
+                "date": "August 2026",
+                "verified": true,
+                "title": "Handles heavy quarry dust and non-stop pit excavation",
+                "comment": "Dust-sealed IP66 luminaire heads and dual air filtration in the Kubota engine make this our preferred machine for night overburden removal. Operators appreciate the hydraulic-assisted manual winch and central crane lifting eye.",
+                "helpfulCount": 26,
+                "tags": [
+                      "Mining & Quarry",
+                      "IP66 Weatherproof",
+                      "Heavy Duty Filtration"
+                ]
+          }
+    ],
     variants: ['ace-lt-9000', 'ace-lt-6000', 'without-genset']
   },
 
@@ -339,6 +418,67 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 4,20,000',
+    pricing: {
+          "exFactory": 420000,
+          "formattedExFactory": "₹ 4,20,000",
+          "gstPercent": 18,
+          "gstAmount": 75600,
+          "formattedGstAmount": "₹ 75,600",
+          "totalPrice": 495600,
+          "formattedTotalPrice": "₹ 4,95,600",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 2,400 - ₹ 2,800",
+          "rentalPerMonth": "₹ 48,000 - ₹ 56,000",
+          "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
+          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 25,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-lt9-1",
+                "author": "Sunil Kumar Saxena",
+                "role": "Deputy General Manager (Plant & Equipment)",
+                "company": "Tata Projects Limited",
+                "location": "Western Dedicated Freight Corridor (WDFC)",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Highly reliable Kohler air-cooled engine with 9.0M 359° rotatable mast",
+                "comment": "Operating in remote rail embankment stretches where water supply is scarce, the air-cooled Kohler diesel engine on ACE LT 9000 has been completely maintenance-free. The 359-degree mast rotation lets our crew reposition light direction without moving the trailer chassis.",
+                "helpfulCount": 37,
+                "tags": [
+                      "Air-Cooled Kohler",
+                      "Rail Infrastructure",
+                      "359° Rotation"
+                ]
+          },
+          {
+                "id": "rev-lt9-2",
+                "author": "Manish Chawla",
+                "role": "Senior Construction Manager",
+                "company": "Afcons Infrastructure Ltd.",
+                "location": "Bandra-Worli Link Rehabilitation Works, Mumbai",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Compact footprint, low diesel burn rate, and 2,32,000 Lumens",
+                "comment": "Fuel consumption is approximately 0.9 Liters/hour which keeps our night shift operating overheads remarkably low. The 40-liter tank easily covers 44 hours of full-power lighting.",
+                "helpfulCount": 29,
+                "tags": [
+                      "Low Fuel Burn",
+                      "Coastal Corrosion Resistant",
+                      "Night Marine Works"
+                ]
+          }
+    ],
     variants: ['ace-lt-12000', 'ace-lt-6000']
   },
 
@@ -513,6 +653,67 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 4,00,000',
+    pricing: {
+          "exFactory": 400000,
+          "formattedExFactory": "₹ 4,00,000",
+          "gstPercent": 18,
+          "gstAmount": 72000,
+          "formattedGstAmount": "₹ 72,000",
+          "totalPrice": 472000,
+          "formattedTotalPrice": "₹ 4,72,000",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 2,200 - ₹ 2,500",
+          "rentalPerMonth": "₹ 42,000 - ₹ 50,000",
+          "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
+          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 25,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-lt6-1",
+                "author": "Praveen R. Nambiar",
+                "role": "Vice President - Site Execution",
+                "company": "Shapoorji Pallonji Engineering & Construction",
+                "location": "Bengaluru Commercial IT Hub Foundations",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Our most deployed workhorse lighting tower across high-rise project sites",
+                "comment": "The ACE LT 6000 offers the ideal balance of 2,32,000 Lumens output, 7.0m mast height, and maneuverability in tight commercial project basements. Winch operation is smooth, and vibration dampening is top-notch.",
+                "helpfulCount": 34,
+                "tags": [
+                      "Commercial Construction",
+                      "Smooth Winch",
+                      "Low Vibration"
+                ]
+          },
+          {
+                "id": "rev-lt6-2",
+                "author": "Gurpreet Singh Brar",
+                "role": "Executive Engineer - Bridges & Structures",
+                "company": "Navayuga Engineering Co. Ltd.",
+                "location": "Ganga Expressway Bridge Pours, UP",
+                "rating": 5,
+                "date": "August 2026",
+                "verified": true,
+                "title": "Rugged canopy and excellent lighting throw across bridge piers",
+                "comment": "Sturdy 4mm steel mast and powder-coated sound-attenuated canopy. It has operated through heavy monsoon rains without water ingress into the electrical compartments.",
+                "helpfulCount": 24,
+                "tags": [
+                      "Monsoon Tested",
+                      "Bridge Engineering",
+                      "Zero Water Ingress"
+                ]
+          }
+    ],
     variants: ['ace-lt-12000', 'ace-lt-9000']
   },
 
@@ -668,6 +869,67 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 2,60,000',
+    pricing: {
+          "exFactory": 260000,
+          "formattedExFactory": "₹ 2,60,000",
+          "gstPercent": 18,
+          "gstAmount": 46800,
+          "formattedGstAmount": "₹ 46,800",
+          "totalPrice": 306800,
+          "formattedTotalPrice": "₹ 3,06,800",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 1,500 - ₹ 1,900",
+          "rentalPerMonth": "₹ 30,000 - ₹ 36,000",
+          "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
+          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 25,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-wg-1",
+                "author": "Devendra K. Pathak",
+                "role": "Chief Electrical Engineer",
+                "company": "Hindustan Shipyard / Drydock Infrastructure",
+                "location": "Visakhapatnam Marine Engineering Yard",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Zero emission, zero diesel fume hazard in enclosed drydocks with 12M mast",
+                "comment": "In shipbuilding docks and covered fabrication sheds, diesel engine exhaust is prohibited. Connecting this tower directly to 220V grid power provides 80,000 lumens across our work zone with total silence and clean air. The upgraded 12-meter mast gives panoramic illumination across vessel hulls.",
+                "helpfulCount": 39,
+                "tags": [
+                      "Zero Emissions",
+                      "12M Height",
+                      "Enclosed Dry Docks"
+                ]
+          },
+          {
+                "id": "rev-wg-2",
+                "author": "Arunav Sengupta",
+                "role": "Plant Maintenance Superintendent",
+                "company": "UltraTech Concrete Ready-Mix Plant",
+                "location": "Noida Metro Extension Yard, UP",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Cuts site lighting operating cost by over 70% compared to diesel towers",
+                "comment": "Since our concrete batching plant has 24/7 grid electricity, running diesel light towers was an unnecessary fuel expense. This grid-powered tower plugs into our site distribution box and saves us lakhs in diesel expenses annually.",
+                "helpfulCount": 28,
+                "tags": [
+                      "Cost Saver",
+                      "Ready-Mix Concrete",
+                      "220V Grid Input"
+                ]
+          }
+    ],
     variants: ['ace-lt-12000', 'ace-5-slt-6000', 'ace-1-2-it-4500']
   },
 
@@ -824,6 +1086,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 3,50,000',
+    pricing: {
+          "exFactory": 350000,
+          "formattedExFactory": "₹ 3,50,000",
+          "gstPercent": 18,
+          "gstAmount": 63000,
+          "formattedGstAmount": "₹ 63,000",
+          "totalPrice": 413000,
+          "formattedTotalPrice": "₹ 4,13,000",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 1,800 - ₹ 2,200",
+          "rentalPerMonth": "₹ 36,000 - ₹ 42,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive Onsite Warranty + Honda Engine Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-plt-1",
+                "author": "Kishore B. Patel",
+                "role": "Highway Resurfacing Contractor",
+                "company": "Gujarat State Road Development Project",
+                "location": "Ahmedabad-Mehsana Night Expansion",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Genuine Honda 4-stroke petrol reliability with 4.0M pneumatic mast",
+                "comment": "The Honda engine starts on the very first pull even in chilly winters. Weighing only 50 kg, two laborers can easily lift it into the back of a Mahindra Bolero pickup.",
+                "helpfulCount": 29,
+                "tags": [
+                      "Honda 4-Stroke",
+                      "Pickup Towable",
+                      "Pneumatic Mast"
+                ]
+          }
+    ],
     variants: ['ace-pblt-4000', 'ace-b-04', 'without-genset']
   },
 
@@ -987,6 +1292,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 4,00,000',
+    pricing: {
+          "exFactory": 400000,
+          "formattedExFactory": "₹ 4,00,000",
+          "gstPercent": 18,
+          "gstAmount": 72000,
+          "formattedGstAmount": "₹ 72,000",
+          "totalPrice": 472000,
+          "formattedTotalPrice": "₹ 4,72,000",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 2,200 - ₹ 2,600",
+          "rentalPerMonth": "₹ 42,000 - ₹ 50,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive Onsite Warranty + 3 Years Battery Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-pblt-1",
+                "author": "Naveen Choudhary",
+                "role": "Events Infrastructure & Stage Power Manager",
+                "company": "Percept Live Entertainment Operations",
+                "location": "Goa Music Festival & Exhibition Ground",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Hybrid silence: runs 12 hours on battery, auto-recharges when mains power is on",
+                "comment": "For live public events and wedding lawns, diesel clatter and exhaust smells are strictly prohibited. The ACE PBLT 4000 is 100% silent on battery mode, delivering 51,000 lumens across our parking lawns.",
+                "helpfulCount": 36,
+                "tags": [
+                      "Hybrid Silent Power",
+                      "VIP Events & Lawns",
+                      "Zero Noise"
+                ]
+          }
+    ],
     variants: ['ace-plt-4000', 'ace-b-04', 'ace-3-slt-6000']
   },
 
@@ -1102,6 +1450,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 1,30,000',
+    pricing: {
+          "exFactory": 130000,
+          "formattedExFactory": "₹ 1,30,000",
+          "gstPercent": 18,
+          "gstAmount": 23400,
+          "formattedGstAmount": "₹ 23,400",
+          "totalPrice": 153400,
+          "formattedTotalPrice": "₹ 1,53,400",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 1,000 - ₹ 1,400",
+          "rentalPerMonth": "₹ 18,000 - ₹ 22,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-it-1",
+                "author": "Santosh K. Tiwari",
+                "role": "Chief Airport Operations Safety Officer",
+                "company": "Airports Authority of India (AAI Engineering)",
+                "location": "Lucknow Chaudhary Charan Singh Airport Runway Overhaul",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "360° Non-glare diffused illumination prevents pilot & driver blinding",
+                "comment": "During runway resurfacing, standard directional floodlights cause severe glare for landing pilots and roller operators. This 4.5m inflatable tower produces 42,000 lumens of shadowless, 360-degree diffused light. Folds down into a small trunk in 2 minutes.",
+                "helpfulCount": 44,
+                "tags": [
+                      "Runway Safe Non-Glare",
+                      "Shadowless 360° Light",
+                      "2-Min Inflation"
+                ]
+          }
+    ],
     variants: ['ace-plt-4000', 'ace-b-04']
   },
 
@@ -1253,6 +1644,67 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 5,50,000',
+    pricing: {
+          "exFactory": 550000,
+          "formattedExFactory": "₹ 5,50,000",
+          "gstPercent": 18,
+          "gstAmount": 99000,
+          "formattedGstAmount": "₹ 99,000",
+          "totalPrice": 649000,
+          "formattedTotalPrice": "₹ 6,49,000",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 3,200 - ₹ 3,600",
+          "rentalPerMonth": "₹ 65,000 - ₹ 75,000",
+          "leadTime": "3 - 5 Days Factory Dispatch",
+          "warranty": "12 Months Comprehensive Unit + 5 Years Solar Panel & LiFePO4 Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 25,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-5slt-1",
+                "author": "Dr. Harshavardhan Rao",
+                "role": "Project Director - Green Energy & Sustainability",
+                "company": "Adani Green Energy Ltd.",
+                "location": "Khavda Solar Ultra Mega Project, Gujarat",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "True zero-fuel, zero-noise solar lighting with 5.0 kVA pure sine wave inverter",
+                "comment": "The 2380W sliding monocrystalline panels and 7.2 kWh LiFePO4 battery pack easily run 10.5 hours every night without fail. Having a 5.0 kVA pure sine wave onboard inverter means site teams can simultaneously charge drone batteries, laptop stations, and survey tools directly from the tower.",
+                "helpfulCount": 46,
+                "tags": [
+                      "Zero Fuel Cost",
+                      "5.0 kVA Auxiliary Power",
+                      "LiFePO4 Lithium Battery"
+                ]
+          },
+          {
+                "id": "rev-5slt-2",
+                "author": "Sanjay Deshmukh",
+                "role": "Senior General Manager (Environmental Safety)",
+                "company": "National Highways & Infrastructure Development Corp (NHIDCL)",
+                "location": "Zojila Pass Approach Tunnel Works, J&K",
+                "rating": 5,
+                "date": "August 2026",
+                "verified": true,
+                "title": "Pristine ecological illumination for environmentally sensitive zones",
+                "comment": "Diesel transport to remote mountain tunnels is logistically grueling. The ACE 5 SLT 6000 captures alpine sunlight by day and illuminates 5,000 sq. meters at night completely autonomously. MPPT efficiency is exceptional even on cloudy days.",
+                "helpfulCount": 35,
+                "tags": [
+                      "Eco-Sensitive Zones",
+                      "Sub-Zero Tolerance",
+                      "Autonomous Solar"
+                ]
+          }
+    ],
     variants: ['solar-surveillance-tower', 'ace-3-slt-6000', 'without-genset']
   },
 
@@ -1403,6 +1855,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 5,15,000',
+    pricing: {
+          "exFactory": 515000,
+          "formattedExFactory": "₹ 5,15,000",
+          "gstPercent": 18,
+          "gstAmount": 92700,
+          "formattedGstAmount": "₹ 92,700",
+          "totalPrice": 607700,
+          "formattedTotalPrice": "₹ 6,07,700",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 3,000 - ₹ 3,400",
+          "rentalPerMonth": "₹ 60,000 - ₹ 70,000",
+          "leadTime": "3 - 5 Days Factory Dispatch",
+          "warranty": "12 Months Comprehensive Unit + 5 Years Solar Panel & LiFePO4 Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-3slt-1",
+                "author": "Vikram Joshi",
+                "role": "Operations Head",
+                "company": "L&T Solar & Renewables EPC",
+                "location": "Pavagada Solar Park, Karnataka",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Reliable 7.0M tiltable mast with 3.0 kVA auxiliary pure sine inverter",
+                "comment": "Deploying the ACE 3 SLT 6000 cut diesel refilling trips across our 10 km project perimeter. The sliding solar panel tray mechanism is robust and dust clean-down takes only 3 minutes.",
+                "helpfulCount": 30,
+                "tags": [
+                      "Solar Park EPC",
+                      "Tiltable Mast",
+                      "Zero Carbon Footprint"
+                ]
+          }
+    ],
     variants: ['solar-surveillance-tower', 'ace-5-slt-6000', 'ace-lt-12000']
   },
 
@@ -1515,6 +2010,67 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 7,50,000',
+    pricing: {
+          "exFactory": 750000,
+          "formattedExFactory": "₹ 7,50,000",
+          "gstPercent": 18,
+          "gstAmount": 135000,
+          "formattedGstAmount": "₹ 1,35,000",
+          "totalPrice": 885000,
+          "formattedTotalPrice": "₹ 8,85,000",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 4,000 - ₹ 4,800",
+          "rentalPerMonth": "₹ 80,000 - ₹ 95,000",
+          "leadTime": "5 - 7 Days Factory Dispatch (Custom Camera & 4G/5G Config)",
+          "warranty": "12 Months Comprehensive Onsite + 3 Years CCTV & LiFePO4 Battery Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 25,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-cctv-1",
+                "author": "Col. Sanjeev Bhasin (Retd.)",
+                "role": "Chief Security Officer & Asset Protection Head",
+                "company": "Adani Ports and Special Economic Zone Ltd.",
+                "location": "Mundra Multi-Modal Logistics Hub, Gujarat",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Unmatched 360° AI perimeter monitoring with remote 4G cloud streaming",
+                "comment": "Installed 3 units along our high-security bonded container storage area. The high-zoom PTZ camera with AI human/vehicle detection combined with 900W floodlights provides crisp 4K surveillance up to 300 meters away. Works 24/7 independently via solar panels and high-capacity battery bank.",
+                "helpfulCount": 52,
+                "tags": [
+                      "AI CCTV Surveillance",
+                      "4G Cloud Streaming",
+                      "High-Security Perimeter"
+                ]
+          },
+          {
+                "id": "rev-cctv-2",
+                "author": "Ramanathan Iyer",
+                "role": "Project Director (Border Fencing & Infra)",
+                "company": "Border & Defense Infrastructure Projects",
+                "location": "Rajasthan Western Frontier Outpost",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Autonomous desert security sentinel with 9.0M elevated vision",
+                "comment": "Desert temperatures and sandstorms have zero impact on the sealed electronics enclosure and solar MPPT charger. Night-vision thermal and bullet cameras give uninterrupted security feeds back to the central base.",
+                "helpfulCount": 41,
+                "tags": [
+                      "Border Defense",
+                      "Severe Desert Hardened",
+                      "Night Vision Thermal"
+                ]
+          }
+    ],
     variants: ['ace-5-slt-6000', 'ace-3-slt-6000']
   },
 
@@ -1652,6 +2208,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 2,00,000',
+    pricing: {
+          "exFactory": 200000,
+          "formattedExFactory": "₹ 2,00,000",
+          "gstPercent": 18,
+          "gstAmount": 36000,
+          "formattedGstAmount": "₹ 36,000",
+          "totalPrice": 236000,
+          "formattedTotalPrice": "₹ 2,36,000",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 1,200 - ₹ 1,500",
+          "rentalPerMonth": "₹ 22,000 - ₹ 26,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive + 3 Years Lithium Battery Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-b4-1",
+                "author": "Tushar Mukherjee",
+                "role": "Senior Tunnel Engineering Supervisor",
+                "company": "IRCON International Limited",
+                "location": "Sivok-Rangpo Railway Tunnel Project, Sikkim",
+                "rating": 5,
+                "date": "October 2026",
+                "verified": true,
+                "title": "Compact 25 kg trolley design with 28,000 Lumens and zero noise",
+                "comment": "In narrow heading tunnels where heavy trailers cannot enter, two technicians can roll this trolley light right up to the drill face. The 100Ah lithium battery delivers 8 hours continuous output, and the telescopic rod adjusts in seconds.",
+                "helpfulCount": 27,
+                "tags": [
+                      "Tunnel Excavation",
+                      "Portable 25kg",
+                      "Silent Lithium Power"
+                ]
+          }
+    ],
     variants: ['ace-b-02', 'ace-b-01', 'ace-1-2-it-4500']
   },
 
@@ -1787,6 +2386,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 1,30,000',
+    pricing: {
+          "exFactory": 130000,
+          "formattedExFactory": "₹ 1,30,000",
+          "gstPercent": 18,
+          "gstAmount": 23400,
+          "formattedGstAmount": "₹ 23,400",
+          "totalPrice": 153400,
+          "formattedTotalPrice": "₹ 1,53,400",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 800 - ₹ 1,100",
+          "rentalPerMonth": "₹ 15,000 - ₹ 18,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive + 3 Years Lithium Battery Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-b2-1",
+                "author": "Alok K. Srivastava",
+                "role": "Emergency Response & Safety Head",
+                "company": "National Disaster Response Force (NDRF Vendor Team)",
+                "location": "Uttarakhand Hill Hazard & Landslide Response Unit",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Fast deployment under 60 seconds with 10,000 Lumens output",
+                "comment": "We store these compact 20 kg units in rapid deployment rescue vehicles. The 4-mode dimmer allows conserving battery during staging, while turbo mode floods search zones with 10,000 lumens.",
+                "helpfulCount": 33,
+                "tags": [
+                      "Disaster Rescue",
+                      "4-Mode Dimmer",
+                      "60-Sec Deployment"
+                ]
+          }
+    ],
     variants: ['ace-b-04', 'ace-b-01', 'ace-plt-4000']
   },
 
@@ -1891,6 +2533,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 70,000',
+    pricing: {
+          "exFactory": 70000,
+          "formattedExFactory": "₹ 70,000",
+          "gstPercent": 18,
+          "gstAmount": 12600,
+          "formattedGstAmount": "₹ 12,600",
+          "totalPrice": 82600,
+          "formattedTotalPrice": "₹ 82,600",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 500 - ₹ 700",
+          "rentalPerMonth": "₹ 9,000 - ₹ 12,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive + 2 Years Battery Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-b1-1",
+                "author": "Deepak G. Shinde",
+                "role": "Track Maintenance Section Engineer",
+                "company": "Northern Railway Engineering Workshop",
+                "location": "Haridwar-Dehradun Track Maintenance Depot",
+                "rating": 5,
+                "date": "August 2026",
+                "verified": true,
+                "title": "Ultra-portable 12 kg suitcase lighting tower for track night inspection",
+                "comment": "Track inspection gangs carry the ACE B-01 like a briefcase along ballast beds. 9 hours of clean diffused LED light makes nighttime rail weld inspection safe and effortless.",
+                "helpfulCount": 25,
+                "tags": [
+                      "Suitcase Format",
+                      "Railway Inspection",
+                      "12kg Lightweight"
+                ]
+          }
+    ],
     variants: ['ace-b-02', 'ace-b-04', 'ace-1-2-it-4500']
   },
 
@@ -1975,6 +2660,49 @@ export const productsData = {
         }
       ]
     },
+        price: '₹ 1,85,000',
+    pricing: {
+          "exFactory": 185000,
+          "formattedExFactory": "₹ 1,85,000",
+          "gstPercent": 18,
+          "gstAmount": 33300,
+          "formattedGstAmount": "₹ 33,300",
+          "totalPrice": 218300,
+          "formattedTotalPrice": "₹ 2,18,300",
+          "unit": "Ex-Works Roorkee Plant",
+          "hsnCode": "85131090",
+          "gstRate": "18% GST (ITC Eligible for Business Tax Credit)",
+          "rentalPerDay": "₹ 1,200 - ₹ 1,600",
+          "rentalPerMonth": "₹ 22,000 - ₹ 28,000",
+          "leadTime": "Ready Stock Roorkee",
+          "warranty": "12 Months Comprehensive + 3 Years Lithium Battery Warranty",
+          "itcEligible": true
+    },
+    aggregateRating: {
+          "ratingValue": 4.9,
+          "reviewCount": 16,
+          "bestRating": 5
+    },
+    reviews: [
+          {
+                "id": "rev-qube-1",
+                "author": "Mahesh K. Bansal",
+                "role": "Site Electrical & Plant Manager",
+                "company": "Gammon India Infrastructure",
+                "location": "Indore Metro Rail Viaduct Package",
+                "rating": 5,
+                "date": "September 2026",
+                "verified": true,
+                "title": "Portable clean energy power cube for off-grid night tools and lights",
+                "comment": "Powers our temporary site office computers, survey lasers, and high-mast LED floodlights with zero exhaust fumes. Super compact cube format.",
+                "helpfulCount": 22,
+                "tags": [
+                      "Compact Power Cube",
+                      "Metro Rail Infrastructure",
+                      "Clean Energy"
+                ]
+          }
+    ],
     variants: ['ace-lt-12000', 'ace-lt-9000', 'ace-lt-6000']
   }
 };

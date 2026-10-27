@@ -522,8 +522,8 @@ export const productsData = {
     title: 'Mobile Light Tower without Genset',
     category: 'without-genset',
     categoryName: 'Mobile Tower Without Genset',
-    tagline: 'High-Performance 80,000 Lumens Grid-Powered 5.0M Mobile Tower',
-    description: 'The Mobile Light Tower without Genset 5 mtr with 4 LED is an ultra-reliable, zero-emission lighting tower engineered for connection to external 220V power or site generators. Equipped with 4 x 200W Bajaj LED floodlights delivering 80,000 lumens across 3,800 square meters on a heavy-duty 5.0-meter mild steel mast.',
+    tagline: 'High-Performance 80,000 Lumens Grid-Powered 12.0M Mobile Tower',
+    description: 'The Mobile Light Tower without Genset 12 mtr with 4 LED is an ultra-reliable, zero-emission lighting tower engineered for connection to external 220V power or site generators. Equipped with 4 x 200W Bajaj LED floodlights delivering 80,000 lumens across 3,800 square meters on a heavy-duty 12.0-meter mild steel mast.',
     image: '/images/products/Mobile Tower Without Genset/withoutgenset-angle1.jpg',
     gallery: [
       '/images/products/Mobile Tower Without Genset/withoutgenset-angle1.jpg',
@@ -554,7 +554,7 @@ export const productsData = {
       }
     ],
     quickSpecs: {
-      mastHeight: { title: 'Mast height', value: '16.4 ft (5.0 MTR)', icon: '/images/icons/mast-height.svg' },
+      mastHeight: { title: 'Mast height', value: '39 ft (12.0 MTR)', icon: '/images/icons/mast-height.svg' },
       light: { title: 'Light', value: '4 x 200W LED = 800W Bajaj (80,000 Lumens)', icon: '/images/icons/led-light.svg' },
       runtime: { title: 'Runtime', value: 'Continuous Grid / External Power', icon: '/images/icons/runtime-in-hours.svg' },
       coverage: { title: 'Light coverage', value: 'Up to 3800 sq. m', icon: '/images/icons/light-coverage.svg' }
@@ -566,15 +566,15 @@ export const productsData = {
         tankSize: 'Direct Power Supply (Zero Fuel Required)',
         sockets: 'Earth Leakage Protection & Separate MCB per Light',
         weight: 'Approx. 400 / 450 KG',
-        dimensions: 'Length: 1635 mm | Width: 1354 mm | Mast: 5.0 m (Mild Steel 4mm)'
+        dimensions: 'Length: 1635 mm | Width: 1354 mm | Mast: 12.0 m (Mild Steel 4mm)'
       }
     ],
     features: [
-      'Technical Specification – Mobile Light Tower without genset 5 mtr with 4 LED',
+      'Technical Specification – Mobile Light Tower without genset 12 mtr with 4 LED',
       '4 x 200W LED Flood Lights (Total 800W) Make- Bajaj (80,000 Lumens / 100 lm/w)',
       'Beam Angle: 30 Degree & 60 Degree Mix for surrounding and perimeter coverage',
       'Area illumination coverage up to 3,800 square meters',
-      '5.0-meter heavy-duty Mild Steel mast (4 mm wall thickness) with manual winch',
+      '12.0-meter heavy-duty Mild Steel mast (4 mm wall thickness) with manual winch',
       'Extension / Closing / Tilt time: Max. 2 minutes each with 10mm stainless steel wire rope',
       'Controls & Safety: Control system, Earth Leakage protection, 2 Safety switches, MCB per light',
       'Chassis: 4 collapsible balancing jacks, 2 tyres (8/9"), 2 leaf springs, 4 loading hooks'
@@ -594,7 +594,7 @@ export const productsData = {
       {
         title: 'Tower Assembly',
         items: [
-          'Height: 5.0 m (Ground Level to Light), Material: Mild Steel, 4 mm thick',
+          'Height: 12.0 m (Ground Level to Light), Material: Mild Steel, 4 mm thick',
           'Extension/Closing/Tilt: Manual winch (Max. 2 minutes each)',
           'Wire rope metal: Stainless steel, Wire rope size: 10mm',
           'Safety switches: 02 nos.'
@@ -618,8 +618,8 @@ export const productsData = {
       }
     ],
     specSheetData: {
-      docRef: 'ALX-TSS-WG5000',
-      title: 'Mobile Light Tower without Genset 5 mtr with 4 LED',
+      docRef: 'ALX-TSS-WG12000',
+      title: 'Mobile Light Tower without Genset 12 mtr with 4 LED',
       subtitle: 'Zero-Emission Grid-Powered Mobile Light Tower',
       sections: [
         {
@@ -638,7 +638,7 @@ export const productsData = {
         {
           category: 'Tower & Mast Assembly',
           items: [
-            { name: 'Tower Height', value: '5.0 m (Ground Level to Light)' },
+            { name: 'Tower Height', value: '12.0 m (Ground Level to Light)' },
             { name: 'Material & Thickness', value: 'Mild Steel, 4 mm Thick' },
             { name: 'Extension / Closing / Tilt', value: 'Manual Winch' },
             { name: 'Extension / Closing Time', value: 'Max. 2 Minutes Each' },

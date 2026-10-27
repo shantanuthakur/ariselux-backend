@@ -180,7 +180,7 @@ export const productsData = {
           "rentalPerDay": "₹ 2,800 - ₹ 3,200",
           "rentalPerMonth": "₹ 55,000 - ₹ 65,000",
           "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
-          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -433,7 +433,7 @@ export const productsData = {
           "rentalPerDay": "₹ 2,400 - ₹ 2,800",
           "rentalPerMonth": "₹ 48,000 - ₹ 56,000",
           "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
-          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -668,7 +668,7 @@ export const productsData = {
           "rentalPerDay": "₹ 2,200 - ₹ 2,500",
           "rentalPerMonth": "₹ 42,000 - ₹ 50,000",
           "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
-          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -884,7 +884,7 @@ export const productsData = {
           "rentalPerDay": "₹ 1,500 - ₹ 1,900",
           "rentalPerMonth": "₹ 30,000 - ₹ 36,000",
           "leadTime": "Ready Stock (Immediate Dispatch Roorkee)",
-          "warranty": "12 Months Comprehensive Onsite Warranty + Lifetime Spares Support",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -1101,7 +1101,7 @@ export const productsData = {
           "rentalPerDay": "₹ 1,800 - ₹ 2,200",
           "rentalPerMonth": "₹ 36,000 - ₹ 42,000",
           "leadTime": "Ready Stock Roorkee",
-          "warranty": "12 Months Comprehensive Onsite Warranty + Honda Engine Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -1307,7 +1307,7 @@ export const productsData = {
           "rentalPerDay": "₹ 2,200 - ₹ 2,600",
           "rentalPerMonth": "₹ 42,000 - ₹ 50,000",
           "leadTime": "Ready Stock Roorkee",
-          "warranty": "12 Months Comprehensive Onsite Warranty + 3 Years Battery Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -1659,7 +1659,7 @@ export const productsData = {
           "rentalPerDay": "₹ 3,200 - ₹ 3,600",
           "rentalPerMonth": "₹ 65,000 - ₹ 75,000",
           "leadTime": "3 - 5 Days Factory Dispatch",
-          "warranty": "12 Months Comprehensive Unit + 5 Years Solar Panel & LiFePO4 Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -1870,7 +1870,7 @@ export const productsData = {
           "rentalPerDay": "₹ 3,000 - ₹ 3,400",
           "rentalPerMonth": "₹ 60,000 - ₹ 70,000",
           "leadTime": "3 - 5 Days Factory Dispatch",
-          "warranty": "12 Months Comprehensive Unit + 5 Years Solar Panel & LiFePO4 Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -2025,7 +2025,7 @@ export const productsData = {
           "rentalPerDay": "₹ 4,000 - ₹ 4,800",
           "rentalPerMonth": "₹ 80,000 - ₹ 95,000",
           "leadTime": "5 - 7 Days Factory Dispatch (Custom Camera & 4G/5G Config)",
-          "warranty": "12 Months Comprehensive Onsite + 3 Years CCTV & LiFePO4 Battery Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -2223,7 +2223,7 @@ export const productsData = {
           "rentalPerDay": "₹ 1,200 - ₹ 1,500",
           "rentalPerMonth": "₹ 22,000 - ₹ 26,000",
           "leadTime": "Ready Stock Roorkee",
-          "warranty": "12 Months Comprehensive + 3 Years Lithium Battery Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -2401,7 +2401,7 @@ export const productsData = {
           "rentalPerDay": "₹ 800 - ₹ 1,100",
           "rentalPerMonth": "₹ 15,000 - ₹ 18,000",
           "leadTime": "Ready Stock Roorkee",
-          "warranty": "12 Months Comprehensive + 3 Years Lithium Battery Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -2548,7 +2548,7 @@ export const productsData = {
           "rentalPerDay": "₹ 500 - ₹ 700",
           "rentalPerMonth": "₹ 9,000 - ₹ 12,000",
           "leadTime": "Ready Stock Roorkee",
-          "warranty": "12 Months Comprehensive + 2 Years Battery Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {
@@ -2675,7 +2675,7 @@ export const productsData = {
           "rentalPerDay": "₹ 1,200 - ₹ 1,600",
           "rentalPerMonth": "₹ 22,000 - ₹ 28,000",
           "leadTime": "Ready Stock Roorkee",
-          "warranty": "12 Months Comprehensive + 3 Years Lithium Battery Warranty",
+          "warranty": "12 Months Comprehensive Onsite Warranty",
           "itcEligible": true
     },
     aggregateRating: {

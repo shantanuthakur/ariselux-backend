@@ -6,7 +6,7 @@
   "main": "src/server.js",
   "scripts": {
     "build": "node --check src/server.js && node --check src/worker.js",
-    "deploy": "wrangler deploy",
+    "deploy": "wrangler deploy --containers-rollout=none",
     "start": "node src/server.js",
     "dev": "node --watch-path=src src/server.js"
   },
